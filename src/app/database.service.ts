@@ -35,10 +35,6 @@ export class DatabaseService {
             stagename: Djs[k].stagename
           }
           if(obj.role != null || obj.role != undefined){
-            // if(obj.genre == "Hip-Hop"){
-              //
-           // }
-            //if(obj.genre == "Commercial house"){}
             this.DjsArray.push(obj)
             console.log(this.DjsArray)
           }
@@ -72,8 +68,6 @@ export class DatabaseService {
              if(obj.genre == "Commercial house"){
               this.houseDjsArray.push(obj)
             }
-            //if(obj.genre == "Commercial house"){}
-            // this.DjsArray.push(obj)
             console.log(this.houseDjsArray)
           }
         }
@@ -104,8 +98,6 @@ export class DatabaseService {
              if(obj.genre == "Hip-Hop"){
               this.hipHopDjsArray.push(obj)
             }
-            //if(obj.genre == "Commercial house"){}
-            // this.DjsArray.push(obj)
             console.log(this.hipHopDjsArray)
           }
         }
