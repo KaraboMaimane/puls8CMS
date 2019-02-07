@@ -1,4 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+$color-primary-light: #EFD268;
+$color-primary-dark: #AB8E21;
+$color-danger: #f53d3d;
+$color-secondary-light: #794DA1;
+$color-secondary-dark: #4A1D73;
+
+$color-grey-light-1: #faf9f9;
+$color-grey-light-2: #f4f2f2;
+$color-grey-light-3: #f0eeee;
+$color-grey-light-4: #ccc;
+
+$color-grey-dark-1: #333;
+$color-grey-dark-2: #777;
+$color-grey-dark-3: #999;
+ 
 :root{
     --color-primary-light: #EFD268;
     --color-primary-dark: #AB8E21;
@@ -14,23 +29,7 @@
     --color-grey-dark-1: #333;
     --color-grey-dark-2: #777;
     --color-grey-dark-3: #999;
-
-    $color-primary-light: #EFD268;
-    $color-primary-dark: #AB8E21;
-    $color-danger: #f53d3d;
-    $color-secondary-light: #794DA1;
-    $color-secondary-dark: #4A1D73;
-
-    $color-grey-light-1: #faf9f9;
-    $color-grey-light-2: #f4f2f2;
-    $color-grey-light-3: #f0eeee;
-    $color-grey-light-4: #ccc;
-    
-    $color-grey-dark-1: #333;
-    $color-grey-dark-2: #777;
-    $color-grey-dark-3: #999;
 }
-
 
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
@@ -80,3 +79,27 @@ body {
     background-repeat: none;
     min-height: 100vh;
 }
+
+.btn1{
+    background: linear-gradient(rgba($color-primary-dark, .5), rgba($color-primary-light, .8));
+    border-radius: 10rem;
+    border:none;
+    padding: 1rem 3rem;
+    font-size: 2rem; 
+    color: $color-grey-light-1;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: .3rem;
+    font-weight: 400;
+    animation: infinite 1s pulseate;
+}
+
+.btn2{
+    background: linear-gradient(rgba($color-primary-dark, .5), rgba($color-primary-light, .8));
+    border-radius: 10rem;
+    -webkit-background-clip: text;
+    display: inline-block;
+    color: transparent;
+}
+
+@keyframes pulse {from{transform: scale3d(1, 1, 1);}50% {transform: scale3d(1.05, 1.05, 1.05);}to{transform: scale3d(1, 1, 1);}}
