@@ -8,6 +8,8 @@ import { DatabaseService } from '../database.service';
 })
 export class HomeComponent implements OnInit {
   DjProfiles = new Array();
+  houseDjs = new Array();
+  hipHopDjs = new Array();
   bio;
   city;
   fullname;
@@ -22,13 +24,27 @@ export class HomeComponent implements OnInit {
   constructor(public database: DatabaseService) { }
    
   ngOnInit() {
+    this.HouseSection();
+    this.HipHopSection();
     this.database.retreiveDJs().then((data:any)=>{
-     console.log(data)
-     
      this.DjProfiles = data;
-     
-     console.log(this.DjProfiles);
+     this.role = this.DjProfiles;
+     console.log(this.role)
 
+    })
+  }
+
+  HouseSection(){
+    this.database.houseDjs().then((data:any)=>{
+      console.log(data)
+      this.houseDjs = data;
+    })
+  }
+
+  HipHopSection(){
+    this.database.HipHopDjs().then((data:any)=>{
+      console.log(data)
+      this.hipHopDjs = data;
     })
   }
 

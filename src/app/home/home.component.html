@@ -1,24 +1,40 @@
-<h1 *ngFor="let x of DjProfiles">
- bio: {{x.bio}}
- <br>
- <br>
- email: {{x.email}}
- <br>
- <br>
- city: {{x.city}}
- <br>
- <br>
- fullname: {{x.fullname}}
- <br>
- <br>
- gender: {{x.gender}}
- <br>
- <br>
- payment: {{x.payment}}
- <br>
- <br>
- price: {{x.price}}
- <br>
- <br>
- stagename : {{x.stagename}}
-</h1>
+<div>
+  <h1>House Dj's</h1>
+  <p class="info" *ngFor="let x of houseDjs">
+    bio: {{x.bio}}
+    <br>
+    <br> email: {{x.email}}
+    <br>
+    <br> city: {{x.city}}
+    <br>
+    <br> fullname: {{x.fullname}}
+    <br>
+    <br> gender: {{x.gender}}
+    <br>
+    <br> payment: {{x.payment}}
+    <br>
+    <br> price: {{x.price}}
+    <br>
+    <br> stagename : {{x.stagename}}
+  </p>
+</div>
+<div>
+  <h1>Hip-Hop Dj's</h1>
+  <p class="info" *ngFor="let x of hipHopDjs">
+    bio: {{x.bio}}
+    <br>
+    <br> email: {{x.email}}
+    <br>
+    <br> city: {{x.city}}
+    <br>
+    <br> fullname: {{x.fullname}}
+    <br>
+    <br> gender: {{x.gender}}
+    <br>
+    <br> payment: {{x.payment}}
+    <br>
+    <br> price: {{x.price}}
+    <br>
+    <br> stagename : {{x.stagename}}
+  </p>
+</div>
