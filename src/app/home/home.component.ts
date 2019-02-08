@@ -48,6 +48,18 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  showinfo(x) {
+    console.log(x);
+    this.fullname = x.fullname;
+    this.bio = x.bio;
+    this.city = x.city;
+    this.email = x.email;
+    this.gender = x.gender;
+    this.payment = x.payment;
+    this.price = x.price;
+    this.stagename =x.stagename
+  }
+
   
 
 }
