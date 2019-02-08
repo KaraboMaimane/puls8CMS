@@ -1,0 +1,62 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    // background: white;
+
+    .leftcont{
+        flex-direction: column;
+        height: 100vh;
+        flex: 1;
+        width: 60%;
+        background: brown;
+
+        .top{
+            display: flex;
+            height: 20vh;
+            width: 100%;
+            background: lightblue;
+            .pulselist{
+                display: flex;
+                height: 20vh;
+                width: 50%;
+                background: green;
+            }
+            .uploads{
+                display: flex;
+                height: 20vh;
+                width: 50%;
+                background: greenyellow;
+            }
+        }
+        .Djlist{
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+            width: 100%;
+            // overflow-y: scroll;
+            background: white;
+
+            .category{
+                height: 20vh;
+                width: 100%;
+                background: pink;
+            }
+
+            .list{
+                height: 60vh;
+                  overflow-y: scroll;
+                width: 100%;
+                background: yellow;
+            }
+        }
+    }
+
+    .rightcont{
+        flex-direction: column;
+        height: 100vh;
+        width: 20%;
+        background: red;
+    }
+}

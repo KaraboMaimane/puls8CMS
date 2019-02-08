@@ -17,8 +17,8 @@ import {Route,RouterModule,Routes} from '@angular/router';
 firebase.initializeApp(config)
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'app', component: HomeComponent}
   
 ]
 

@@ -40,7 +40,6 @@ $color-grey-dark-3: #999;
         align-items: center;
         img{
             height: 6rem;
-            width: 6rem;
         }
         .name{
             font-size: 3rem;
@@ -61,6 +60,18 @@ $color-grey-dark-3: #999;
                 -webkit-background-clip: text;
                 color: transparent; 
               }
+        }
+    }
+}
+
+.content{
+    background: white;
+    display: flex;
+
+    .seperator{
+        background: pink;
+        .leftcontent{
+            
         }
     }
 }
