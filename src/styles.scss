@@ -13,6 +13,7 @@ $color-grey-light-4: #ccc;
 $color-grey-dark-1: #333;
 $color-grey-dark-2: #777;
 $color-grey-dark-3: #999;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
  
 :root{
     --color-primary-light: #EFD268;
@@ -69,12 +70,13 @@ html{
     @include respond(big-desktop) {
         font-size: 75%; //1rem = 12, 12/16
     }
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
     box-sizing: border-box;
-    background: linear-gradient(rgba(black, .9), rgba(black, .8)), url('../src/assets/thumbnail_krb.jpg');
+    background: linear-gradient(rgba(black, .9), rgba(black, .8)), url('../src/assets/cro.jpg');
     background-size: cover;
     background-repeat: none;
     min-height: 100vh;
