@@ -205,7 +205,42 @@ $color-grey-dark-3: #999;
         flex-direction: column;
         height: 100vh;
         width: 25rem;
-        background: red;
+        color: white;
+        text-align: center;
+
+
+        .displaypic{
+            height: 20rem;
+            width: 20rem;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+            border: 2px solid white;
+
+        }
+
+        .stagename{
+            font-size: 4rem;
+            margin-top: 2rem;
+
+        }
+
+        .fullname{
+            font-size: 2rem;
+            margin-top: 1rem;
+
+        }
+
+        .city{
+            font-size: 1.6rem;
+            margin-top: 1rem;
+
+        }
+
+        .bio{
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
     }
 }
 
