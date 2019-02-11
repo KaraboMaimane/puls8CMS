@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
     this.database.retreiveDJs().then((data:any)=>{
       if(data !== null || data !== undefined){
       this.DjProfiles = data;
-     console.log(this.totalDjs)
       }
      
 

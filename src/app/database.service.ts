@@ -44,7 +44,7 @@ export class DatabaseService {
           if (obj.role != null || obj.role != undefined) {
             this.DjsArray.push(obj)
             this.totalOutlets = x + 1;
-            console.log(obj.outlets)
+            console.log(this.totalOutlets)
           }
         }
       })
