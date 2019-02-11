@@ -24,92 +24,99 @@
       </div>
       <div class="djlist">
         <div class="genlist">
-          <a class="genre active">All</a>
-          <a class="genre">Commercial</a>
+          <a class="genre active" (click)="page = 'allDjs'" >All</a>
+          <a class="genre"  (click)="page = 'commercial'">Commercial</a>
           <a class="genre">Deep House</a>
           <a class="genre">EDM</a>
           <a class="genre">R & B</a>
-          <a class="genre">Hip Hop</a>
+          <a class="genre" (click)="page = 'hipHop'">Hip Hop</a>
         </div>
-        <div class="avatarcnt">
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
+
+        <div class="avatarcnt"  *ngIf="page == 'allDjs'">
+            <div *ngFor="let x of DjProfiles" class="avatar">
+                <img src="{{x.img}}" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">{{x.fullname}}</p>
+                  <p class="avatar__textcontainer--category">{{x.genre}}</p>
+                </div>
+            </div>
           </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+        <div class="avatarcnt" *ngIf="page == 'commercial'">
+          <div  *ngFor="let x of houseDjs" class="avatar">
+              <img src="{{x.img}}" alt="" class="avatar__image">
               <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
+                <p class="avatar__textcontainer--name">{{x.fullname}}</p>
+                <p class="avatar__textcontainer--category">{{x.genre}}</p>
               </div>
           </div>
         </div>
+        <div class="avatarcnt" *ngIf="page == 'hipHop'">
+            <div *ngFor="let x of hipHopDjs" class="avatar">
+                <img src="{{x.img}}" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">{{x.fullname}}</p>
+                  <p class="avatar__textcontainer--category">{{x.genre}}</p>
+                </div>
+            </div>
+          </div>
+
+          <!-- <div class="avatar">
+              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+              <div class="avatar__textcontainer">
+                <p class="avatar__textcontainer--name">Dj Breeze</p>
+                <p class="avatar__textcontainer--category">Deep House</p>
+              </div>
+          </div>
+          <div class="avatar">
+              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+              <div class="avatar__textcontainer">
+                <p class="avatar__textcontainer--name">Dj Breeze</p>
+                <p class="avatar__textcontainer--category">Deep House</p>
+              </div>
+          </div> -->
+          <!-- <div class="avatar">
+              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+              <div class="avatar__textcontainer">
+                <p class="avatar__textcontainer--name">Dj Breeze</p>
+                <p class="avatar__textcontainer--category">Deep House</p>
+              </div>
+          </div>
+          <div class="avatar">
+              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+              <div class="avatar__textcontainer">
+                <p class="avatar__textcontainer--name">Dj Breeze</p>
+                <p class="avatar__textcontainer--category">Deep House</p>
+              </div>
+          </div>
+          <div class="avatar">
+              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+              <div class="avatar__textcontainer">
+                <p class="avatar__textcontainer--name">Dj Breeze</p>
+                <p class="avatar__textcontainer--category">Deep House</p>
+              </div>
+          </div>
+          <div class="avatar">
+              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+              <div class="avatar__textcontainer">
+                <p class="avatar__textcontainer--name">Dj Breeze</p>
+                <p class="avatar__textcontainer--category">Deep House</p>
+              </div>
+          </div>
+          <div class="avatar">
+              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+              <div class="avatar__textcontainer">
+                <p class="avatar__textcontainer--name">Dj Breeze</p>
+                <p class="avatar__textcontainer--category">Deep House</p>
+              </div>
+          </div>
+          <div class="avatar">
+              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+              <div class="avatar__textcontainer">
+                <p class="avatar__textcontainer--name">Dj Breeze</p>
+                <p class="avatar__textcontainer--category">Deep House</p>
+              </div>
+          </div> -->
+        
       </div>
 
     </div>
@@ -123,11 +130,11 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sed reprehenderit minus et eius. Minus explicabo mollitia a sit adipisci, modi quia animi porro ipsam, eligendi, ullam iste? Dolor, ea?
       </p>
 
-      <p class="views">Views</p>
+      <p class="head">Views</p>
       <p class="number">23</p>
-      <p class="interactions">Interactions</p>
+      <p class="head">Interactions</p>
       <p class="number">23</p>
-      <p class="comment">Comments</p>
+      <p class="head">Comments</p>
       <p class="number">23</p>
 
     </div>

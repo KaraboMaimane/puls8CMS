@@ -35,7 +35,8 @@ export class DatabaseService {
             payment: Djs[k].payment,
             price: Djs[k].price,
             role: Djs[k].role,
-            stagename: Djs[k].stagename
+            stagename: Djs[k].stagename,
+            img: Djs[k].img
           }
           if (obj.role != null || obj.role != undefined) {
             this.DjsArray.push(obj)
@@ -64,7 +65,8 @@ export class DatabaseService {
             payment: Djs[k].payment,
             price: Djs[k].price,
             role: Djs[k].role,
-            stagename: Djs[k].stagename
+            stagename: Djs[k].stagename,
+            img: Djs[k].img
           }
           if (obj.role != null || obj.role != undefined) {
             if (obj.genre == "Commercial house") {
@@ -94,7 +96,8 @@ export class DatabaseService {
             payment: Djs[k].payment,
             price: Djs[k].price,
             role: Djs[k].role,
-            stagename: Djs[k].stagename
+            stagename: Djs[k].stagename,
+            img: Djs[k].img
           }
           if (obj.role != null || obj.role != undefined) {
             if (obj.genre == "Deep House") {
@@ -124,7 +127,8 @@ export class DatabaseService {
             payment: Djs[k].payment,
             price: Djs[k].price,
             role: Djs[k].role,
-            stagename: Djs[k].stagename
+            stagename: Djs[k].stagename,
+            img: Djs[k].img
           }
           if (obj.role != null || obj.role != undefined) {
             if (obj.genre == "Hip-Hop") {
@@ -154,7 +158,8 @@ export class DatabaseService {
             payment: Djs[k].payment,
             price: Djs[k].price,
             role: Djs[k].role,
-            stagename: Djs[k].stagename
+            stagename: Djs[k].stagename,
+            img: Djs[k].img
           }
           if (obj.role != null || obj.role != undefined) {
             if (obj.genre == "RnB") {
@@ -184,7 +189,8 @@ export class DatabaseService {
             payment: Djs[k].payment,
             price: Djs[k].price,
             role: Djs[k].role,
-            stagename: Djs[k].stagename
+            stagename: Djs[k].stagename,
+            img: Djs[k].img
           }
           if (obj.role != null || obj.role != undefined) {
             if (obj.genre == "EDM") {

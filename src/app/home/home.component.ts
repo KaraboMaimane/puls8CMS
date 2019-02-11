@@ -19,7 +19,10 @@ export class HomeComponent implements OnInit {
   price;
   role;
   stagename;
+  totalDjs: any;
+  modal;
   
+  page: string= 'home'
 
   constructor(public database: DatabaseService) { }
    
@@ -35,11 +38,13 @@ export class HomeComponent implements OnInit {
   }
 
   HouseSection(){
+    this.houseDjs.length = 0;
     this.database.houseDjs().then((data:any)=>{
       console.log(data)
       this.houseDjs = data;
     })
   }
+
 
   HipHopSection(){
     this.database.HipHopDjs().then((data:any)=>{
