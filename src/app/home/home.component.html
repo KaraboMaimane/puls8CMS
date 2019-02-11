@@ -7,12 +7,12 @@
 
 <div class="content">
   <div class="seperator">
-    <div class="leftcontent">
-      <div class="cardrow">
-        <div class="card">
+    <div  class="leftcontent">
+      <div  class="cardrow">
+        <div  class="card">
           <div class="titlecontainer">
             <h1 class="title">Pulse DJs</h1>
-            <p class="number">88</p>
+            <p *ngFor="let x of DjProfiles" class="number">{{x.outlets}}</p>
           </div>
         </div>
         <div class="card">

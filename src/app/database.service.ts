@@ -7,6 +7,7 @@ import * as firebase from 'firebase';
 
 
 export class DatabaseService {
+  totalOutlets: number;
   database = firebase.database();
   authentication = firebase.auth();
   DjsArray = new Array();
@@ -25,6 +26,7 @@ export class DatabaseService {
         var keys = Object.keys(Djs)
         for (var x = 0; x < keys.length; x++) {
           var k = keys[x];
+         
           let obj = {
             bio: Djs[k].bio,
             city: Djs[k].city,
@@ -36,10 +38,13 @@ export class DatabaseService {
             price: Djs[k].price,
             role: Djs[k].role,
             stagename: Djs[k].stagename,
-            img: Djs[k].img
+            img: Djs[k].img,
+            outlets: this.totalOutlets
           }
           if (obj.role != null || obj.role != undefined) {
             this.DjsArray.push(obj)
+            this.totalOutlets = x + 1;
+            console.log(obj.outlets)
           }
         }
       })

@@ -7,7 +7,7 @@ import { DatabaseService } from '../database.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  DjProfiles = new Array();
+  DjProfiles:any = new Array();
   houseDjs = new Array();
   hipHopDjs = new Array();
   bio;
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   price;
   role;
   stagename;
-  totalDjs: any;
+  totalDjs;
   modal;
   
   page: string= 'home'
@@ -30,9 +30,11 @@ export class HomeComponent implements OnInit {
     this.HouseSection();
     this.HipHopSection();
     this.database.retreiveDJs().then((data:any)=>{
-     this.DjProfiles = data;
-     this.role = this.DjProfiles;
-     console.log(this.role)
+      if(data !== null || data !== undefined){
+      this.DjProfiles = data;
+     console.log(this.totalDjs)
+      }
+     
 
     })
   }
