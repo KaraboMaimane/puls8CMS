@@ -14,7 +14,7 @@ $color-grey-dark-2: #777;
 $color-grey-dark-3: #999;
 
 .body{
-    color: white;
+    // color: white;
 }
 .info{
     font-size: 1.5rem;
@@ -52,6 +52,7 @@ $color-grey-dark-3: #999;
                 
                 height: 100%;
             }
+
             .eight{
                 font-size: 6rem;
                 font-weight: 500;
@@ -59,19 +60,157 @@ $color-grey-dark-3: #999;
                 background: linear-gradient(rgba($color-primary-light, .8), rgba($color-primary-dark, .5));
                 -webkit-background-clip: text;
                 color: transparent; 
-              }
+            }
         }
     }
 }
 
-.content{
-    background: white;
-    display: flex;
+// .content{
+//     background: white;
+//     display: flex;
 
-    .seperator{
-        background: pink;
-        .leftcontent{
+//     .seperator{
+//         background: pink;
+//         .leftcontent{
             
+//         }
+//     }
+// }
+
+.content{
+    height: 95vh;
+    width: 100%;
+    // background: white;
+    .seperator{
+        display: flex;
+        flex-direction: row;
+    }
+    .leftcontent{
+        flex-direction: column;
+        flex: 1;
+        width: 60%;
+
+        .cardrow{
+            display: flex;
+            height: 20vh;
+            width: 100%;
+            background: lightblue;
+            .card{
+                display: flex;
+                height: 20vh;
+                // width: 50%;
+                color: white;
+
+                align-items: center;
+                justify-content: center;
+
+                .titlecontainer{
+                    
+                    .title{font-size: 3rem;text-align: center;}
+                    .number{font-size: 4rem;text-align: center;}
+                }
+                &:nth-child(1){
+                    flex: 0 0 50%;
+                    background: url('../../assets/decks.jpg');
+                    background-size: cover;
+                    background-position: center;
+
+                }
+
+                &:nth-child(2){
+                    flex: 0 0 50%;
+                    background: url('../../assets/crowd.jpg');
+                    background-size: cover;
+                    background-position: bottom;
+                }
+            }
+        }
+        .djlist{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .category{
+                height: 20vh;
+                width: 100%;
+                background: pink;
+            }
+
+            .genlist{
+                width: 100%;
+                color: white;
+                display: flex;
+                justify-content: space-evenly;
+                .genre{
+                    display: block;
+                    padding: 1rem 2rem;
+                    font-size: 2rem;
+                    margin: .5rem 0;
+                    transition: all ease .3s;
+                    &:hover{
+                        color: $color-primary-dark;
+                        // background: $color-primary-dark;
+                        border-radius: 10rem;
+                    }
+
+                    .active{
+                        background: $color-primary-dark;
+                        border-radius: 10rem;
+                    }
+                }
+            }
+
+            .avatarcnt{
+                // background: #4A1D73;
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                .avatar{
+                    flex: 0 0 15%;
+                    margin-left: 5rem; 
+                    margin-top: 2rem;
+
+                    margin: 2rem 2.5rem 0 2.5rem;
+
+                    &__image{
+                        width: 10rem;
+                        height: 10rem;
+                        border-radius: 50%;
+                        border: 2px solid white;
+                        margin: 0 auto;
+                        display: block;
+                    }
+
+                    &__textcontainer{
+                        // display: flex;
+                        color: white;
+                        &--name{
+                            display: block;
+                            text-align: center;
+                            font-size: 3rem;
+                        }
+                        &--category{
+                            display: block;
+                            text-align: center;
+                            font-size: 2rem;
+                        }
+                    }
+                }
+                
+            }
         }
     }
+
+    .rightcontent{
+        flex-direction: column;
+        height: 100vh;
+        width: 25rem;
+        background: red;
+    }
+}
+
+
+.active{
+    background: $color-primary-dark;
+    border-radius: 10rem;
 }
