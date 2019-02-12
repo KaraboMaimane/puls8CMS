@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   hipHopDjs = new Array();
   bio;
   city;
-  fullname;
+  fullname
   email;
   gender;
   payment;
