@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { DatabaseService } from './database.service';
 import { HomeComponent } from './home/home.component';
 import {Route,RouterModule,Routes} from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
 
   var config = {
   apiKey: "AIzaSyDHRAF0bth4sm4p4xTTBzjqc3RmdMNLcY4",
@@ -19,14 +20,15 @@ firebase.initializeApp(config)
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'app', component: HomeComponent}
-  
+  {path: 'app', component: HomeComponent},
+  {path: 'profile', component: ProfileComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

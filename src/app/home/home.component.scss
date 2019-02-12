@@ -34,6 +34,7 @@ $color-grey-dark-3: #999;
 .nav{
     color: white;
     display: flex;
+    height: 6vh;
     .logo{
         display: flex;
         padding: .5rem;
@@ -49,14 +50,12 @@ $color-grey-dark-3: #999;
             margin: 0;
             .prefix{
                 position: relative;
-                
                 height: 100%;
             }
 
             .eight{
                 font-size: 6rem;
                 font-weight: 500;
-                // margin-left: -0.4em;
                 background: linear-gradient(rgba($color-primary-light, .8), rgba($color-primary-dark, .5));
                 -webkit-background-clip: text;
                 color: transparent; 
@@ -78,7 +77,7 @@ $color-grey-dark-3: #999;
 // }
 
 .content{
-    height: 95vh;
+    height: 94vh;
     width: 100%;
     // background: white;
     .seperator{
@@ -106,12 +105,12 @@ $color-grey-dark-3: #999;
 
                 .titlecontainer{
                     
-                    .title{font-size: 3rem;text-align: center;}
-                    .number{font-size: 4rem;text-align: center;}
+                    .title{font-weight: 200; font-size: 3rem;text-align: center;}
+                    .number{font-size: 6rem;text-align: center;}
                 }
                 &:nth-child(1){
                     flex: 0 0 50%;
-                    background: url('../../assets/decks.jpg');
+                    background: linear-gradient(rgba(black, .5), rgba(black, .5)) , url('../../assets/decks.jpg');
                     background-size: cover;
                     background-position: center;
 
@@ -119,7 +118,7 @@ $color-grey-dark-3: #999;
 
                 &:nth-child(2){
                     flex: 0 0 50%;
-                    background: url('../../assets/crowd.jpg');
+                    background: linear-gradient(rgba(black, .5), rgba(black, .5)) , url('../../assets/crowd.jpg');
                     background-size: cover;
                     background-position: bottom;
                 }
@@ -166,11 +165,17 @@ $color-grey-dark-3: #999;
                 display: flex;
                 flex-flow: row wrap;
                 .avatar{
-                    flex: 0 0 15%;
+                    flex: 0 0 20rem;
                     margin-left: 5rem; 
                     margin-top: 2rem;
-
+                    
                     margin: 2rem 2.5rem 0 2.5rem;
+                    padding: .5rem;
+                    transition: ease .3s all;
+                    &:hover{
+                        background: #AB8E21;
+                        border-radius: .5rem;
+                    }
 
                     &__image{
                         width: 10rem;
@@ -202,11 +207,20 @@ $color-grey-dark-3: #999;
     }
 
     .rightcontent{
+        background: linear-gradient(rgba($color-secondary-dark, .9), rgba(black,9));
         flex-direction: column;
-        height: 100vh;
+        height: 94vh;
         width: 25rem;
         color: white;
         text-align: center;
+
+        .more{
+            background: none;
+            color: white;
+            font-size: 2.5rem;
+            border: none;
+            margin-top: 2rem;
+        }
 
         .displaypic{
             height: 20rem;
@@ -237,8 +251,18 @@ $color-grey-dark-3: #999;
         }
 
         .bio{
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .head{
+            font-size: 2.5rem;
+            margin-top: 1;
+        }
+
+        .number{
             font-size: 2rem;
-            margin-top: 2rem;
         }
     }
 }

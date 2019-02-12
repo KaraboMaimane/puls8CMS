@@ -24,15 +24,15 @@
       </div>
       <div class="djlist">
         <div class="genlist">
-          <a class="genre active" (click)="page = 'allDjs'" >All</a>
-          <a class="genre"  (click)="page = 'commercial'">Commercial</a>
+          <a class="genre" [class.active]="page == 'allDjs'" (click)="page = 'allDjs'; " >All</a>
+          <a class="genre" [class.active]="page == 'commercial'"  (click)="page = 'commercial'">Commercial</a>
           <a class="genre">Deep House</a>
           <a class="genre">EDM</a>
           <a class="genre">R & B</a>
-          <a class="genre" (click)="page = 'hipHop'">Hip Hop</a>
+          <a class="genre" [class.active]="page == 'hipHop'" (click)="page = 'hipHop'">Hip Hop</a>
         </div>
 
-        <div class="avatarcnt"  *ngIf="page == 'allDjs'">
+        <div class="avatarcnt" *ngIf="page == 'allDjs'">
             <div *ngFor="let x of DjProfiles" class="avatar">
                 <img src="{{x.img}}" alt="" class="avatar__image">
                 <div class="avatar__textcontainer">
@@ -49,7 +49,7 @@
                 <p class="avatar__textcontainer--category">{{x.genre}}</p>
               </div>
           </div>
-        </div>
+        </div> 
         <div class="avatarcnt" *ngIf="page == 'hipHop'">
             <div *ngFor="let x of hipHopDjs" class="avatar">
                 <img src="{{x.img}}" alt="" class="avatar__image">
@@ -125,7 +125,7 @@
       <p class="stagename">Dj Breeze</p>
       <p class="fullname">Karabo Maimane</p>
       <p class="city">Soweto, Johannesburg</p>
-
+    <button (click)="navigate('profile')" class="more">View Profile</button>
       <p class="bio">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sed reprehenderit minus et eius. Minus explicabo mollitia a sit adipisci, modi quia animi porro ipsam, eligendi, ullam iste? Dolor, ea?
       </p>

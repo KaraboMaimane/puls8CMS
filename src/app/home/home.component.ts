@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../database.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
   
   page: string= 'home'
 
-  constructor(public database: DatabaseService) { }
+  constructor(public database: DatabaseService, private router: Router) { }
    
   ngOnInit() {
     this.HouseSection();
@@ -65,6 +66,9 @@ export class HomeComponent implements OnInit {
     this.stagename =x.stagename
   }
 
+  navigate(page: string){
+    this.router.navigate([page]);
+  }
   
 
 }
