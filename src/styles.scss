@@ -71,7 +71,8 @@ html{
         font-size: 75%; //1rem = 12, 12/16
     }
 
-    font-family: 'Roboto', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Lobster|Poppins');
+    font-family: 'Poppins', sans-serif !important;
 }
 
 body {
