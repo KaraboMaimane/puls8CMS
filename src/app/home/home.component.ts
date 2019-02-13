@@ -23,7 +23,9 @@ export class HomeComponent implements OnInit {
   totalDjs;
   modal;
   
-  page: string= 'home'
+  page: string= 'home';
+
+  lactive: string = 'bio';
 
   constructor(public database: DatabaseService, private router: Router) { }
    

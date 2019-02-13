@@ -5,11 +5,7 @@
 </div>
 <div class="profilecontainer">
   <div class="leftside">
-    <div class="seglist">
-        <li class="item lactive">Music</li>
-        <li class="item">Comments</li>
-        <li class="item">Interactions</li>
-    </div>
+
 
     <p class="djname">Dj Ntonton</p>
     <p class="city">Naledi, Johannesburg</p>
@@ -18,8 +14,13 @@
       <button class="message">Message User</button>
       <button class="remove">Remove User</button>
     </div>
+    <div class="seglist">
+      <li class="item" [class.lactive]="seg == 'music'" (click)="seg = 'music'; ">Music</li>
+      <li class="item" [class.lactive]="seg == 'comments'" (click)="seg = 'comments'; ">Comments</li>
+      <li class="item" [class.lactive]="seg == 'profile'" (click)="seg = 'profile'; ">Profile</li>
+    </div>
 
-    <div class="cardlist">
+    <div class="cardlist" *ngIf="seg == 'music'">
       <div class="card">
         <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
         <div class="text">
@@ -98,10 +99,19 @@
         </div>
       </div>
     </div>
+
+    <div class="cardlist" *ngIf="seg == 'comments'">
+      <p class="text" style="color: white">Comments go here</p>
+    </div>
+
+    <div class="cardlist" *ngIf="seg == 'profile'">
+      <p class="text" style="color: white">Bio goes here</p>
+    </div>
   </div>
-  <div class="rightside">right</div>
+  <div class="rightside"></div>
 </div>
 
-<div class="list">
+
+<!-- <div class="list">
   l
-</div>
+</div> -->
