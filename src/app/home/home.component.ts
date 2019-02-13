@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  DjProfiles:any = new Array();
+  DjProfiles = new Array();
   houseDjs = new Array();
   hipHopDjs = new Array();
   bio;
@@ -21,37 +21,44 @@ export class HomeComponent implements OnInit {
   role;
   stagename;
   totalDjs;
+  img;
   modal;
   
   page: string= 'home';
 
   lactive: string = 'bio';
 
-  constructor(public database: DatabaseService, private router: Router) { }
+
+  constructor(public database: DatabaseService, private router: Router) {
    
+   }
+
   ngOnInit() {
     this.HouseSection();
     this.HipHopSection();
-    this.database.retreiveDJs().then((data:any)=>{
-      if(data !== null || data !== undefined){
-      this.DjProfiles = data;
-      }
-     
+    this.AllSection();
+  
+  }
 
+  AllSection(){
+    this.houseDjs.length = 0;
+    this.database.retreiveDJs().then((data: any) => {
+        this.DjProfiles = data;
+        console.log(this.DjProfiles)
     })
   }
 
-  HouseSection(){
+  HouseSection() {
     this.houseDjs.length = 0;
-    this.database.houseDjs().then((data:any)=>{
+    this.database.houseDjs().then((data: any) => {
       console.log(data)
       this.houseDjs = data;
     })
   }
 
 
-  HipHopSection(){
-    this.database.HipHopDjs().then((data:any)=>{
+  HipHopSection() {
+    this.database.HipHopDjs().then((data: any) => {
       console.log(data)
       this.hipHopDjs = data;
     })
@@ -66,12 +73,13 @@ export class HomeComponent implements OnInit {
     this.gender = x.gender;
     this.payment = x.payment;
     this.price = x.price;
-    this.stagename =x.stagename
+    this.stagename = x.stagename
+    this.img = x.img
   }
 
-  navigate(page: string){
+  navigate(page: string) {
     this.router.navigate([page]);
   }
-  
+
 
 }

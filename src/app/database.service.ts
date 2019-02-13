@@ -16,39 +16,66 @@ export class DatabaseService {
   RnBDjsArray = new Array();
   DeepHouseDjsArray = new Array();
   ElecroDancMusicArray = new Array();
+  idsArray = new Array();
   state;
+  key;
+  userid
   constructor() { }
 
+  DjUser(userid) {
+    this.userid = userid;
+    console.log(this.userid)
+  }
+  getKey(key) {
+    this.key = key
+    console.log(this.key)
+  }
+
+  assignIds(k) {
+    this.idsArray = k;
+  }
   retreiveDJs() {
     return new Promise((accpt, rej) => {
-      this.database.ref('Registration/').on('value', (data: any) => {
+      this.database.ref('Registration').on('value', (data: any) => {
         var Djs = data.val();
+        console.log(Djs)
         var keys = Object.keys(Djs)
+        console.log(keys)
+        this.assignIds(keys)
+    
         for (var x = 0; x < keys.length; x++) {
-          var k = keys[x];
-         
-          let obj = {
-            bio: Djs[k].bio,
-            city: Djs[k].city,
-            email: Djs[k].email,
-            fullname: Djs[k].fullname,
-            gender: Djs[k].gender,
-            genre: Djs[k].genre,
-            payment: Djs[k].payment,
-            price: Djs[k].price,
-            role: Djs[k].role,
-            stagename: Djs[k].stagename,
-            img: Djs[k].img,
-            outlets: this.totalOutlets
-          }
-          if (obj.role != null || obj.role != undefined) {
-            this.DjsArray.push(obj)
-            this.totalOutlets = x + 1;
-            console.log(this.totalOutlets)
-          }
+          this.database.ref('Registration/' + keys[x]).on('value', (data2: any) => {
+            var details = data2.val();
+            var keys2 = Object.keys(details)
+           
+           
+            var k = keys[x]
+            let obj = {
+              bio: details[keys2[0]].bio,
+              city: details[keys2[0]].city,
+              email: details[keys2[0]].email,
+              fullname: details[keys2[0]].fullname,
+              gender: details[keys2[0]].gender,
+              genre: details[keys2[0]].genre,
+              payment: details[keys2[0]].payment,
+              price: details[keys2[0]].price,
+              role: details[keys2[0]].role,
+              stagename: details[keys2[0]].stagename,
+              img: details[keys2[0]].img,
+              // outlets: this.totalOutlets
+            }
+            // if (obj.role != null || obj.role != undefined) {
+            //   this.DjsArray.push(obj)
+            //   this.totalOutlets = x + 1;
+            //   console.log(this.totalOutlets)
+            // }
+            this.DjsArray.push(obj);
+            console.log(this.DjsArray)
+          })
         }
       })
       accpt(this.DjsArray)
+      console.log(this.DjsArray);
     })
 
   }
@@ -59,26 +86,34 @@ export class DatabaseService {
         var Djs = data.val();
         var keys = Object.keys(Djs)
         for (var x = 0; x < keys.length; x++) {
-          var k = keys[x];
-          let obj = {
-            bio: Djs[k].bio,
-            city: Djs[k].city,
-            email: Djs[k].email,
-            fullname: Djs[k].fullname,
-            gender: Djs[k].gender,
-            genre: Djs[k].genre,
-            payment: Djs[k].payment,
-            price: Djs[k].price,
-            role: Djs[k].role,
-            stagename: Djs[k].stagename,
-            img: Djs[k].img
-          }
-          if (obj.role != null || obj.role != undefined) {
-            if (obj.genre == "Commercial house") {
-              this.houseDjsArray.push(obj)
+          this.database.ref('Registration/' + keys[x]).on('value', (data2: any) => {
+            let displayHouseDj = data2.val();
+            var keys2 = Object.keys(displayHouseDj)
+            var k = keys[x];
+            let obj = {
+              bio:  displayHouseDj[keys2[0]].bio,
+              city:  displayHouseDj[keys2[0]].city,
+              email: displayHouseDj[keys2[0]].email,
+              fullname:  displayHouseDj[keys2[0]].fullname,
+              gender:  displayHouseDj[keys2[0]].gender,
+              genre:  displayHouseDj[keys2[0]].genre,
+              payment: displayHouseDj[keys2[0]].payment,
+              price: displayHouseDj[keys2[0]].price,
+              role:  displayHouseDj[keys2[0]].role,
+              stagename:  displayHouseDj[keys2[0]].stagename,
+              img:  displayHouseDj[keys2[0]].img,
             }
-          }
+            if (obj.role != null || obj.role != undefined) {
+              if (obj.genre == "Commercial house") {
+                this.houseDjsArray.push(obj)
+                console.log(this.houseDjsArray)
+              }
+            }
+            this.houseDjsArray.push(obj);
+            console.log(this.houseDjsArray)
+           })
         }
+       
       })
       accpt(this.houseDjsArray)
     })
@@ -90,26 +125,34 @@ export class DatabaseService {
         var Djs = data.val();
         var keys = Object.keys(Djs)
         for (var x = 0; x < keys.length; x++) {
-          var k = keys[x];
-          let obj = {
-            bio: Djs[k].bio,
-            city: Djs[k].city,
-            email: Djs[k].email,
-            fullname: Djs[k].fullname,
-            gender: Djs[k].gender,
-            genre: Djs[k].genre,
-            payment: Djs[k].payment,
-            price: Djs[k].price,
-            role: Djs[k].role,
-            stagename: Djs[k].stagename,
-            img: Djs[k].img
-          }
-          if (obj.role != null || obj.role != undefined) {
-            if (obj.genre == "Deep House") {
-              this.DeepHouseDjsArray.push(obj)
+          this.database.ref('Registration/' + keys[x]).on('value', (data2: any) => {
+            let displayHouseDj = data2.val();
+            var keys2 = Object.keys(displayHouseDj)
+            var k = keys[x];
+            let obj = {
+              bio:  displayHouseDj[keys2[0]].bio,
+              city:  displayHouseDj[keys2[0]].city,
+              email: displayHouseDj[keys2[0]].email,
+              fullname:  displayHouseDj[keys2[0]].fullname,
+              gender:  displayHouseDj[keys2[0]].gender,
+              genre:  displayHouseDj[keys2[0]].genre,
+              payment: displayHouseDj[keys2[0]].payment,
+              price: displayHouseDj[keys2[0]].price,
+              role:  displayHouseDj[keys2[0]].role,
+              stagename:  displayHouseDj[keys2[0]].stagename,
+              img:  displayHouseDj[keys2[0]].img,
             }
-          }
+            if (obj.role != null || obj.role != undefined) {
+              if (obj.genre == "Commercial house") {
+                this.houseDjsArray.push(obj)
+                console.log(this.houseDjsArray)
+              }
+            }
+            this.DeepHouseDjsArray.push(obj);
+            console.log(this.DeepHouseDjsArray)
+           })
         }
+       
       })
       accpt(this.DeepHouseDjsArray)
     })
@@ -121,26 +164,34 @@ export class DatabaseService {
         var Djs = data.val();
         var keys = Object.keys(Djs)
         for (var x = 0; x < keys.length; x++) {
-          var k = keys[x];
-          let obj = {
-            bio: Djs[k].bio,
-            city: Djs[k].city,
-            email: Djs[k].email,
-            fullname: Djs[k].fullname,
-            gender: Djs[k].gender,
-            genre: Djs[k].genre,
-            payment: Djs[k].payment,
-            price: Djs[k].price,
-            role: Djs[k].role,
-            stagename: Djs[k].stagename,
-            img: Djs[k].img
-          }
-          if (obj.role != null || obj.role != undefined) {
-            if (obj.genre == "Hip-Hop") {
-              this.hipHopDjsArray.push(obj)
+          this.database.ref('Registration/' + keys[x]).on('value', (data2: any) => {
+            let displayHouseDj = data2.val();
+            var keys2 = Object.keys(displayHouseDj)
+            var k = keys[x];
+            let obj = {
+              bio:  displayHouseDj[keys2[0]].bio,
+              city:  displayHouseDj[keys2[0]].city,
+              email: displayHouseDj[keys2[0]].email,
+              fullname:  displayHouseDj[keys2[0]].fullname,
+              gender:  displayHouseDj[keys2[0]].gender,
+              genre:  displayHouseDj[keys2[0]].genre,
+              payment: displayHouseDj[keys2[0]].payment,
+              price: displayHouseDj[keys2[0]].price,
+              role:  displayHouseDj[keys2[0]].role,
+              stagename:  displayHouseDj[keys2[0]].stagename,
+              img:  displayHouseDj[keys2[0]].img,
             }
-          }
+            if (obj.role != null || obj.role != undefined) {
+              if (obj.genre == "Commercial house") {
+                this.hipHopDjsArray.push(obj)
+                console.log(this.hipHopDjsArray)
+              }
+            }
+            this.hipHopDjsArray.push(obj);
+            console.log(this.hipHopDjsArray)
+           })
         }
+       
       })
       accpt(this.hipHopDjsArray)
     })
@@ -152,26 +203,34 @@ export class DatabaseService {
         var Djs = data.val();
         var keys = Object.keys(Djs)
         for (var x = 0; x < keys.length; x++) {
-          var k = keys[x];
-          let obj = {
-            bio: Djs[k].bio,
-            city: Djs[k].city,
-            email: Djs[k].email,
-            fullname: Djs[k].fullname,
-            gender: Djs[k].gender,
-            genre: Djs[k].genre,
-            payment: Djs[k].payment,
-            price: Djs[k].price,
-            role: Djs[k].role,
-            stagename: Djs[k].stagename,
-            img: Djs[k].img
-          }
-          if (obj.role != null || obj.role != undefined) {
-            if (obj.genre == "RnB") {
-              this.RnBDjsArray.push(obj)
+          this.database.ref('Registration/' + keys[x]).on('value', (data2: any) => {
+            let displayHouseDj = data2.val();
+            var keys2 = Object.keys(displayHouseDj)
+            var k = keys[x];
+            let obj = {
+              bio:  displayHouseDj[keys2[0]].bio,
+              city:  displayHouseDj[keys2[0]].city,
+              email: displayHouseDj[keys2[0]].email,
+              fullname:  displayHouseDj[keys2[0]].fullname,
+              gender:  displayHouseDj[keys2[0]].gender,
+              genre:  displayHouseDj[keys2[0]].genre,
+              payment: displayHouseDj[keys2[0]].payment,
+              price: displayHouseDj[keys2[0]].price,
+              role:  displayHouseDj[keys2[0]].role,
+              stagename:  displayHouseDj[keys2[0]].stagename,
+              img:  displayHouseDj[keys2[0]].img,
             }
-          }
+            if (obj.role != null || obj.role != undefined) {
+              if (obj.genre == "Commercial house") {
+                this.RnBDjsArray.push(obj)
+                console.log(this.RnBDjsArray)
+              }
+            }
+            this.RnBDjsArray.push(obj);
+            console.log(this.RnBDjsArray)
+           })
         }
+       
       })
       accpt(this.RnBDjsArray)
     })
@@ -183,26 +242,34 @@ export class DatabaseService {
         var Djs = data.val();
         var keys = Object.keys(Djs)
         for (var x = 0; x < keys.length; x++) {
-          var k = keys[x];
-          let obj = {
-            bio: Djs[k].bio,
-            city: Djs[k].city,
-            email: Djs[k].email,
-            fullname: Djs[k].fullname,
-            gender: Djs[k].gender,
-            genre: Djs[k].genre,
-            payment: Djs[k].payment,
-            price: Djs[k].price,
-            role: Djs[k].role,
-            stagename: Djs[k].stagename,
-            img: Djs[k].img
-          }
-          if (obj.role != null || obj.role != undefined) {
-            if (obj.genre == "EDM") {
-              this.ElecroDancMusicArray.push(obj)
+          this.database.ref('Registration/' + keys[x]).on('value', (data2: any) => {
+            let displayHouseDj = data2.val();
+            var keys2 = Object.keys(displayHouseDj)
+            var k = keys[x];
+            let obj = {
+              bio:  displayHouseDj[keys2[0]].bio,
+              city:  displayHouseDj[keys2[0]].city,
+              email: displayHouseDj[keys2[0]].email,
+              fullname:  displayHouseDj[keys2[0]].fullname,
+              gender:  displayHouseDj[keys2[0]].gender,
+              genre:  displayHouseDj[keys2[0]].genre,
+              payment: displayHouseDj[keys2[0]].payment,
+              price: displayHouseDj[keys2[0]].price,
+              role:  displayHouseDj[keys2[0]].role,
+              stagename:  displayHouseDj[keys2[0]].stagename,
+              img:  displayHouseDj[keys2[0]].img,
             }
-          }
+            if (obj.role != null || obj.role != undefined) {
+              if (obj.genre == "Commercial house") {
+                this.ElecroDancMusicArray.push(obj)
+                console.log(this.ElecroDancMusicArray)
+              }
+            }
+            this.ElecroDancMusicArray.push(obj);
+            console.log(this.ElecroDancMusicArray)
+           })
         }
+       
       })
       accpt(this.ElecroDancMusicArray)
     })

@@ -36,7 +36,7 @@
 
         <div class="avatarcnt" *ngIf="page == 'allDjs'">
             <div *ngFor="let x of DjProfiles" class="avatar">
-                <img src="{{x.img}}" alt="" class="avatar__image">
+                <img  (click)="showinfo(x)" src="{{x.img}}" alt="" class="avatar__image">
                 <div class="avatar__textcontainer">
                   <p class="avatar__textcontainer--name">{{x.fullname}}</p>
                   <p class="avatar__textcontainer--category">{{x.genre}}</p>
@@ -45,7 +45,7 @@
           </div>
         <div class="avatarcnt" *ngIf="page == 'commercial'">
           <div  *ngFor="let x of houseDjs" class="avatar">
-              <img src="{{x.img}}" alt="" class="avatar__image">
+              <img (click)="showinfo(x)"  src="{{x.img}}" alt="" class="avatar__image">
               <div class="avatar__textcontainer">
                 <p class="avatar__textcontainer--name">{{x.fullname}}</p>
                 <p class="avatar__textcontainer--category">{{x.genre}}</p>
@@ -54,7 +54,7 @@
         </div> 
         <div class="avatarcnt" *ngIf="page == 'hipHop'">
             <div *ngFor="let x of hipHopDjs" class="avatar">
-                <img src="{{x.img}}" alt="" class="avatar__image">
+                <img (click)="showinfo(x)"  src="{{x.img}}" alt="" class="avatar__image">
                 <div class="avatar__textcontainer">
                   <p class="avatar__textcontainer--name">{{x.fullname}}</p>
                   <p class="avatar__textcontainer--category">{{x.genre}}</p>
@@ -123,13 +123,13 @@
 
     </div>
     <div class="rightcontent">
-      <img src="../../assets/marshmello_1200x630.jpg" alt="" class="displaypic">
-      <p class="stagename">Dj Breeze</p>
-      <p class="fullname">Karabo Maimane</p>
-      <p class="city">Soweto, Johannesburg</p>
+      <img [src]="img" alt="" class="displaypic">
+      <p class="stagename">{{stagename}}</p>
+      <p class="fullname">{{fullname}}</p>
+      <p class="city">{{city}}</p>
     <button (click)="navigate('profile')" class="more">View Profile</button>
       <p class="bio">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sed reprehenderit minus et eius. Minus explicabo mollitia a sit adipisci, modi quia animi porro ipsam, eligendi, ullam iste? Dolor, ea?
+       {{bio}}
       </p>
 
       <p class="head">Views</p>
