@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DatabaseService } from '../database.service';
 import { Router } from '@angular/router';
-declare var Swal;
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -44,8 +45,8 @@ export class LoginComponent implements OnInit {
 
   }
 
-  passwordReset() {
-    const { value: email } = Swal.fire({
+  resetpassword() {
+    const value = Swal.fire({
       title: 'Enter your email address',
       input: 'email',
       showCancelButton: true,
@@ -60,6 +61,12 @@ export class LoginComponent implements OnInit {
               title: `A Password Reset Email Has Been Sent to ${value}`,
               showConfirmButton: false,
               timer: 2500
+            }).catch((error)=>{
+              Swal.fire({
+                type: 'error',
+                title: 'Oh Snap!',
+                text: `${error.message}`
+              })
             })
           })
           // Swal.fire(`Your IP address is ${value}`)
