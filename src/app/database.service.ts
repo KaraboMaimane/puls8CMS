@@ -42,13 +42,10 @@ export class DatabaseService {
         var keys = Object.keys(Djs)
         console.log(keys)
         this.assignIds(keys)
-    
         for (var x = 0; x < keys.length; x++) {
           this.database.ref('Registration/' + keys[x]).on('value', (data2: any) => {
             var details = data2.val();
-            var keys2 = Object.keys(details)
-           
-           
+            var keys2 = Object.keys(details)       
             var k = keys[x]
             let obj = {
               bio: details[keys2[0]].bio,

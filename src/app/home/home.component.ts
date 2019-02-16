@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   }
 
   AllSection(){
-    this.houseDjs.length = 0;
+
     this.database.retreiveDJs().then((data: any) => {
         this.DjProfiles = data;
         console.log(this.DjProfiles)
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
   }
 
   HouseSection() {
-    this.houseDjs.length = 0;
+
     this.database.houseDjs().then((data: any) => {
       console.log(data)
       this.houseDjs = data;
