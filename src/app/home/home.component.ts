@@ -82,6 +82,8 @@ export class HomeComponent implements OnInit {
   }
 
   ViewProfile() {
+    
+
     let obj = {
       fullname: this.fullname,
       bio: this.bio,
