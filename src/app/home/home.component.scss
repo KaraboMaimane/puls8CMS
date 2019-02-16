@@ -230,6 +230,10 @@ $color-grey-dark-3: #999;
         }
     }
 
+    .acti{
+        background: $color-primary-dark;
+    }
+
     .genderselect{
         background: linear-gradient($color-primary-light, $color-primary-dark);
         border: none;
@@ -313,10 +317,6 @@ $color-grey-dark-3: #999;
 
 .gendercontainer{
     position: relative;
-    .active{
-        background: $color-primary-dark;
-        border-radius: 10rem;
-    }
     
     .gender{
         background: $color-primary-light;

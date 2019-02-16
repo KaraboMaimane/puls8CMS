@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
     this.bio = '';
     this.fullname = '';
     this.city = '';
-    this.page=  'allDjs';
+    this.page =  'allDjs';
   }
 
   AllSection() {
