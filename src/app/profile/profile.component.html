@@ -4,11 +4,11 @@
   </div>
 </div>
 <div class="profilecontainer">
-  <div class="leftside">
+  <div class="leftside" *ngFor="let a of Profile">
 
 
-    <p class="djname">Dj Ntonton</p>
-    <p class="city">Naledi, Johannesburg</p>
+    <p class="djname">{{a.fullname}}</p>
+    <p class="city">{{a.city}}</p>
 
     <div class="buttonlist">
       <button class="message">Message User</button>
@@ -22,77 +22,7 @@
 
     <div class="cardlist" *ngIf="seg == 'music'">
       <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
-        <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="../../assets/Apps-Player-Audio-B-icon.png" alt="" class="art">
+        <img [src]="a.img" alt="" class="art">
         <div class="text">
           <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
           <p class="track">Khon' O Zo Lahla</p>
@@ -107,7 +37,7 @@
     </div>
 
     <div class="cardlist" *ngIf="seg == 'profile'">
-      <p >Bio goes here</p>
+      <p >{{a.bio}}</p>
     </div>
   </div>
   <div class="rightside"></div>
