@@ -11,8 +11,11 @@
       <p *ngIf="!password.valid && password.touched" class="err">Password Cannot Be Empty!</p>
       <input type="submit" value="login" class="button">
 
-      <a class="link" href="sign-in" (click)="nextPage('signin')">create account</a>
-      <a class="link" href="sign-in">Forgot Password?</a>
+      <a class="link">
+        <span class="link" (click)="nextpage('register')">Create An Account</span> or <span (click)="reset = 'true'">Forgot Password</span>
+      </a>
+      
+      <!-- <a class="link" >Forgot Password?</a> -->
 
     </form>
   </div>

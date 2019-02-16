@@ -293,6 +293,10 @@ export class DatabaseService {
     return this.authentication.signInWithEmailAndPassword(email, password);
   }
 
+  resetpassword(email: string){
+    return this.authentication.sendPasswordResetEmail(email);
+  }
+
   // Register(email: string, password: string){
   //   this.authentication.createUserWithEmailAndPassword(email, password);
   // }

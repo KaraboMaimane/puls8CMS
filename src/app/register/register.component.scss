@@ -22,7 +22,7 @@ $color-grey-dark-3: #999;
     .border{
         background-color: rgba(white, .1) ;
         width: 55%;
-        height: 65vh;
+        // height: 65vh;
         border-radius: 3rem;
         border: 15px solid transparent;
     }
@@ -41,7 +41,8 @@ $color-grey-dark-3: #999;
     
         .input{
             width: 70%;
-            margin-left: 8rem;
+            // margin-left: 8rem;
+            margin: 0 auto;
             display: block;
             margin-bottom: 3rem;
             font-size: 2.5rem;
@@ -64,7 +65,7 @@ $color-grey-dark-3: #999;
         padding: 1rem 2rem;
         border: none;
         width: 70%;
-        margin-left: 8rem;
+        margin: 0 auto;
         border-radius: 10rem;
         font-size: 2.5rem;
         text-transform: uppercase;
@@ -81,12 +82,20 @@ $color-grey-dark-3: #999;
         text-transform: uppercase;
         text-transform: capitalize;
         text-decoration: none;
-        position: absolute;
-        top: 1rem;
-        right: 3rem;
-        font-size: 3rem;
-        &:nth-child(1){
-            margin-top: 4rem;
+        font-size: 2rem;
+        transition: .3s;
+        margin-bottom: 2rem;
+        &:hover{
+            color: $color-primary-light;
+        }
+
+        &::before{
+            content: "";
+            background: white;
+            position: absolute;
+            width: 10rem;
+            display: block;
+            top: 1rem;
         }
     }
     // .link1{
@@ -108,4 +117,6 @@ $color-grey-dark-3: #999;
         margin-bottom: 3rem;
     }
 }
+
+
 }
