@@ -4,11 +4,11 @@
   </div>
 </div>
 <div class="profilecontainer">
-  <div class="leftside" *ngFor="let a of Profile">
+  <div class="leftside">
 
 
-    <p class="djname">{{a.fullname}}</p>
-    <p class="city">{{a.city}}</p>
+    <p class="djname">{{object.fullname}}</p>
+    <p class="city">{{object.city}}</p>
 
     <div class="buttonlist">
       <button class="message">Message User</button>
@@ -22,7 +22,7 @@
 
     <div class="cardlist" *ngIf="seg == 'music'">
       <div class="card">
-        <img [src]="a.img" alt="" class="art">
+        <img [src]="object.img" alt="" class="art">
         <div class="text">
           <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
           <p class="track">Khon' O Zo Lahla</p>
@@ -37,14 +37,16 @@
     </div>
 
     <div class="cardlist" *ngIf="seg == 'profile'">
-      <p >{{a.bio}}</p>
+      <p >{{object.bio}}</p>
     </div>
   </div>
-  <div class="rightside" [ngStyle]="{
-    'background-image': 'url('+ a.img +')',
+  <div class="rightside" 
+  [ngStyle]="{
+    'background-image': 'url('+ object.img +')',
     'background-size': 'cover',
     'background-position': 'center'
-  }"></div>
+  }"
+  ></div>
 </div>
 
 

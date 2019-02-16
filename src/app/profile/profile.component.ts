@@ -12,14 +12,15 @@ export class ProfileComponent implements OnInit {
   Profile =[];
   temp = [];
   event: Observable<string | null>
+  object: any;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.seg = 'profile';
 
-    this.Profile = arry
-    console.log(this.Profile)
-
+    this.Profile = arry;
+    this.object = arry[0];
+    console.log(this.object);
   }
 
 }
