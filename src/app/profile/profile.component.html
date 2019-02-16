@@ -40,7 +40,11 @@
       <p >{{a.bio}}</p>
     </div>
   </div>
-  <div class="rightside"></div>
+  <div class="rightside" [ngStyle]="{
+    'background-image': 'url('+ a.img +')',
+    'background-size': 'cover',
+    'background-position': 'center'
+  }"></div>
 </div>
 
 
