@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   page: string = 'home';
 
   lactive: string = 'bio';
+  err: string;
 
 
   constructor(public database: DatabaseService, private router: Router) {
@@ -82,25 +83,29 @@ export class HomeComponent implements OnInit {
   }
 
   ViewProfile() {
-    
 
-    let obj = {
-      fullname: this.fullname,
-      bio: this.bio,
-      city: this.city,
-      email: this.email,
-      gender: this.gender,
-      payment: this.payment,
-      price: this.price,
-      stagename: this.stagename,
-      img: this.img
+    if(this.stagename !== '' && this.fullname !== ''){
+      let obj = {
+        fullname: this.fullname,
+        bio: this.bio,
+        city: this.city,
+        email: this.email,
+        gender: this.gender,
+        payment: this.payment,
+        price: this.price,
+        stagename: this.stagename,
+        img: this.img
+      }
+      arry.push(obj)
+      console.log(arry)
+  
+  
+      this.router.navigate(['/profile']);
+      // console.log(this.obj)
+    }else{
+      this.err = 'true';
     }
-    arry.push(obj)
-    console.log(arry)
 
-
-    this.router.navigate(['/profile']);
-    // console.log(this.obj)
   }
 
   // Event(x){

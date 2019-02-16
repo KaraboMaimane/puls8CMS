@@ -100,7 +100,7 @@
         <p class="head">Comments</p>
         <p class="number">23</p> -->
 
-        <button  (click)="ViewProfile()"  class="more">View Profile</button>
+        <button  (click)="ViewProfile()" *ngIf="stagename != ''" class="more">View Profile</button>
 
       </div>
     </div>
