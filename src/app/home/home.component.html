@@ -125,10 +125,12 @@
       </div>
       <div class="rightcontent">
         <img [src]="img" alt="" class="displaypic">
-        <p class="stagename">{{stagename}}</p>
-        <p class="fullname">{{fullname}}</p>
-        <p class="city">{{city}}</p>
-      <button  (click)="ViewProfile()"  class="more">View Profile</button>
+        <p class="stagename" *ngIf="stagename == ''">No Profile Selected</p>
+        
+        <p class="stagename" *ngIf="stagename != ''">{{stagename}}</p>
+        <p class="fullname" *ngIf="fullname != ''">{{fullname}}</p>
+        <p class="city" *ngIf="city != ''">{{city}}</p>
+        <button  (click)="ViewProfile()"  class="more">View Profile</button>
         <p class="bio">
          {{bio}}
         </p>

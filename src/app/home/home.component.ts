@@ -13,9 +13,9 @@ export class HomeComponent implements OnInit {
   DjProfiles = new Array();
   houseDjs = new Array();
   hipHopDjs = new Array();
-  bio: any = 'Select A Genre And A Dj Profile To View Their Information';
+  bio: any = '';
   city: any;
-  fullname: any = 'No Profile Selected';
+  fullname: any = '';
   email;
   gender;
   payment;
@@ -39,17 +39,18 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.HouseSection();
-    // this.HipHopSection();
-    // this.AllSection();
-
+    this.stagename = '';
+    this.bio = '';
+    this.fullname = '';
+    this.city = '';
+    this.page=  'allDjs';
   }
 
   AllSection() {
     this.database.retreiveDJs().then((data: any) => {
       this.DjProfiles = data;
       console.log(this.DjProfiles)
-    })
+    }) 
   }
 
   HouseSection() {
