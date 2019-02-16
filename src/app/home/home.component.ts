@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../database.service';
 import { Router } from '@angular/router';
+import { Profile } from 'selenium-webdriver/firefox';
 
 @Component({
   selector: 'app-home',
@@ -30,18 +31,20 @@ export class HomeComponent implements OnInit {
 
 
   constructor(public database: DatabaseService, private router: Router) {
-   
+    this.database.retreiveDJs().then((data: any) => {
+      this.DjProfiles = data;
+      console.log(this.DjProfiles)
+  })
    }
 
   ngOnInit() {
-    this.HouseSection();
-    this.HipHopSection();
-    this.AllSection();
+    // this.HouseSection();
+    // this.HipHopSection();
+    // this.AllSection();
   
   }
 
   AllSection(){
-    this.houseDjs.length = 0;
     this.database.retreiveDJs().then((data: any) => {
         this.DjProfiles = data;
         console.log(this.DjProfiles)
@@ -49,10 +52,9 @@ export class HomeComponent implements OnInit {
   }
 
   HouseSection() {
-    this.houseDjs.length = 0;
     this.database.houseDjs().then((data: any) => {
-      console.log(data)
       this.houseDjs = data;
+      console.log(this.houseDjs)
     })
   }
 
@@ -75,11 +77,14 @@ export class HomeComponent implements OnInit {
     this.price = x.price;
     this.stagename = x.stagename
     this.img = x.img
+
+    this.router.navigate(['/profile'])
   }
 
   navigate(page: string) {
     this.router.navigate([page]);
   }
 
+ 
 
 }

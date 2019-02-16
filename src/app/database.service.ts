@@ -41,14 +41,11 @@ export class DatabaseService {
         console.log(Djs)
         var keys = Object.keys(Djs)
         console.log(keys)
-        this.assignIds(keys)
-    
+        // this.assignIds(keys)
         for (var x = 0; x < keys.length; x++) {
           this.database.ref('Registration/' + keys[x]).on('value', (data2: any) => {
             var details = data2.val();
-            var keys2 = Object.keys(details)
-           
-           
+            var keys2 = Object.keys(details)       
             var k = keys[x]
             let obj = {
               bio: details[keys2[0]].bio,
@@ -103,12 +100,12 @@ export class DatabaseService {
               stagename:  displayHouseDj[keys2[0]].stagename,
               img:  displayHouseDj[keys2[0]].img,
             }
-            if (obj.role != null || obj.role != undefined) {
+            // if (obj.role != null || obj.role != undefined) {
               if (obj.genre == "Commercial house") {
                 this.houseDjsArray.push(obj)
                 console.log(this.houseDjsArray)
               }
-            }
+            // }
             this.houseDjsArray.push(obj);
             console.log(this.houseDjsArray)
            })
@@ -116,6 +113,7 @@ export class DatabaseService {
        
       })
       accpt(this.houseDjsArray)
+      console.log(this.houseDjsArray)
     })
   }
 
@@ -274,17 +272,6 @@ export class DatabaseService {
       accpt(this.ElecroDancMusicArray)
     })
   }
-
-  // Login(email, password) {
-  //   return new Promise((accpt, rej) => {
-  //     this.authentication.signInWithEmailAndPassword(email, password).then(() => {
-  //       accpt("Success")
-  //     }, Error => {
-  //       alert("Something Went wrong!!!")
-  //     })
-  //   })
-  // }
-
   register(email: string, password: string){
     return this.authentication.createUserWithEmailAndPassword(email, password);
   }
@@ -296,10 +283,6 @@ export class DatabaseService {
   resetpassword(email: string){
     return this.authentication.sendPasswordResetEmail(email);
   }
-
-  // Register(email: string, password: string){
-  //   this.authentication.createUserWithEmailAndPassword(email, password);
-  // }
 
   getUserState() {
     return new Promise((accpt, rej) => {
