@@ -107,3 +107,13 @@ $color-grey-dark-3: #999;
     }
 }
 }
+
+.hov{
+    color: white;
+    transform: scale(1) !important;
+    transition: .3s; 
+
+}
+.hov:hover{
+    color: $color-primary-light !important;
+}

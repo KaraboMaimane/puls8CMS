@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
       input: 'email',
       showCancelButton: true,
       inputValidator: (value) => {
-        if (value) {
           console.log(value)
           this.database.resetpassword(value).then((email) => {
             console.log(email);
@@ -69,10 +68,7 @@ export class LoginComponent implements OnInit {
               })
             })
           })
-          // Swal.fire(`Your IP address is ${value}`)
-        }
         return !value && 'Please enter a valid email address!';
-
       }
 
     })
