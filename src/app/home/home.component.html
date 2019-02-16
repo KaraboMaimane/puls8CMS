@@ -37,7 +37,7 @@
   
           <div class="avatarcnt" *ngIf="page == 'allDjs'">
               <div *ngFor="let x of DjProfiles" class="avatar">
-                  <img  (click)="showinfo(x)" src="{{x.img}}" alt="" class="avatar__image">
+                  <img  (click)="DisplayInfor(x)" src="{{x.img}}" alt="" class="avatar__image">
                   <div class="avatar__textcontainer">
                     <p class="avatar__textcontainer--name">{{x.fullname}}</p>
                     <p class="avatar__textcontainer--category">{{x.genre}}</p>
@@ -46,7 +46,7 @@
             </div>
           <div class="avatarcnt" *ngIf="page == 'commercial'">
             <div  *ngFor="let x of houseDjs" class="avatar">
-                <img (click)="showinfo(x)"  src="{{x.img}}" alt="" class="avatar__image">
+                <img (click)="DisplayInfor(x)"  src="{{x.img}}" alt="" class="avatar__image">
                 <div class="avatar__textcontainer">
                   <p class="avatar__textcontainer--name">{{x.fullname}}</p>
                   <p class="avatar__textcontainer--category">{{x.genre}}</p>
@@ -55,7 +55,7 @@
           </div> 
           <div class="avatarcnt" *ngIf="page == 'hipHop'">
               <div *ngFor="let x of hipHopDjs" class="avatar">
-                  <img (click)="showinfo(x)"  src="{{x.img}}" alt="" class="avatar__image">
+                  <img (click)="DisplayInfor(x)"  src="{{x.img}}" alt="" class="avatar__image">
                   <div class="avatar__textcontainer">
                     <p class="avatar__textcontainer--name">{{x.fullname}}</p>
                     <p class="avatar__textcontainer--category">{{x.genre}}</p>
@@ -128,7 +128,7 @@
         <p class="stagename">{{stagename}}</p>
         <p class="fullname">{{fullname}}</p>
         <p class="city">{{city}}</p>
-      <button (click)="navigate('profile')"   (click)="showinfo(x)"  class="more">View Profile</button>
+      <button  (click)="ViewProfile()"  class="more">View Profile</button>
         <p class="bio">
          {{bio}}
         </p>
