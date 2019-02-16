@@ -29,10 +29,10 @@
           <div class="genlist">
             <a class="genre" [class.active]="page == 'allDjs'" (click)="page = 'allDjs'; " >All</a>
             <a class="genre" [class.active]="page == 'commercial'"  (click)="page = 'commercial'">Commercial</a>
-            <a class="genre">Deep House</a>
-            <a class="genre">EDM</a>
-            <a class="genre">R & B</a>
-            <a class="genre" [class.active]="page == 'hipHop'" (click)="page = 'hipHop'">Hip Hop</a>
+            <a class="genre" [class.active]="page == 'deephouse'" (click)="page = 'deephouse';">Deep House</a>
+            <a class="genre" [class.active]="page == 'edm'" (click)="page = 'edm';">EDM</a>
+            <a class="genre" [class.active]="page == 'rnb'" (click)="page = 'rnb';">R & B</a>
+            <a class="genre" [class.active]="page == 'hiphop'" (click)="page = 'hiphop'">Hip Hop</a>
           </div>
   
           <div class="avatarcnt" *ngIf="page == 'allDjs'">
