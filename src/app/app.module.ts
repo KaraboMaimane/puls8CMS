@@ -6,6 +6,9 @@ import { DatabaseService } from './database.service';
 import { HomeComponent } from './home/home.component';
 import {Route,RouterModule,Routes} from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import {FormsModule} from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
   var config = {
   apiKey: "AIzaSyDHRAF0bth4sm4p4xTTBzjqc3RmdMNLcY4",
@@ -18,10 +21,12 @@ import { ProfileComponent } from './profile/profile.component';
 firebase.initializeApp(config)
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'app', component: HomeComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register' , component: RegisterComponent}
 ]
 
 @NgModule({
@@ -29,11 +34,13 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     ProfileComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-  
+    FormsModule
   ],
   providers: [DatabaseService],
   bootstrap: [AppComponent],

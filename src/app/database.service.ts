@@ -272,15 +272,31 @@ export class DatabaseService {
     })
   }
 
-  Login(email, password) {
-    return new Promise((accpt, rej) => {
-      this.authentication.signInWithEmailAndPassword(email, password).then(() => {
-        accpt("Success")
-      }, Error => {
-        alert("Something Went wrong!!!")
-      })
-    })
+  // Login(email, password) {
+  //   return new Promise((accpt, rej) => {
+  //     this.authentication.signInWithEmailAndPassword(email, password).then(() => {
+  //       accpt("Success")
+  //     }, Error => {
+  //       alert("Something Went wrong!!!")
+  //     })
+  //   })
+  // }
+
+  register(email: string, password: string){
+    return this.authentication.createUserWithEmailAndPassword(email, password);
   }
+
+  login(email: string, password: string){
+    return this.authentication.signInWithEmailAndPassword(email, password);
+  }
+
+  resetpassword(email: string){
+    return this.authentication.sendPasswordResetEmail(email);
+  }
+
+  // Register(email: string, password: string){
+  //   this.authentication.createUserWithEmailAndPassword(email, password);
+  // }
 
   getUserState() {
     return new Promise((accpt, rej) => {

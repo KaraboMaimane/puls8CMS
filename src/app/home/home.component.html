@@ -1,192 +1,194 @@
-<div class="nav">
-  <div class="logo">
-    <img src="../../assets/heading Logo copy.png" alt="" class="logo">
+<div class="container">
+  <div class="nav">
+    <div class="logo">
+      <img src="../../assets/heading Logo copy.png" alt="" class="logo">
+    </div>
+  
   </div>
-
-</div>
-
-<div class="content">
-  <div class="seperator">
-    <div  class="leftcontent">
-      <div  class="cardrow">
-        <div  class="card">
-          <div class="titlecontainer">
-            <h1 class="title">Pulse DJs</h1>
-            <p class="number">45</p>
-            
-            <!-- <p *ngFor="let x of DjProfiles" class="number">{{x.outlets}}</p> -->
-          </div>
-        </div>
-        <div class="card">
-          <div class="titlecontainer">
-            <h1 class="title">Users</h1>
-            <p class="number">55</p>
-          </div>
-        </div>
-      </div>
-      <div class="djlist">
-        <div class="genlist">
-          <a class="genre" [class.active]="page == 'allDjs'" (click)="page = 'allDjs'; " >All</a>
-          <a class="genre" [class.active]="page == 'commercial'"  (click)="page = 'commercial'">Commercial</a>
-          <a class="genre">Deep House</a>
-          <a class="genre">EDM</a>
-          <a class="genre">R & B</a>
-          <a class="genre" [class.active]="page == 'hipHop'" (click)="page = 'hipHop'">Hip Hop</a>
-        </div>
-
-        <div class="avatarcnt" *ngIf="page == 'allDjs'">
-            <div *ngFor="let x of DjProfiles" class="avatar">
-                <img  (click)="showinfo(x)" src="{{x.img}}" alt="" class="avatar__image">
-                <div class="avatar__textcontainer">
-                  <p class="avatar__textcontainer--name">{{x.fullname}}</p>
-                  <p class="avatar__textcontainer--category">{{x.genre}}</p>
-                </div>
+  
+  <div class="content">
+    <div class="seperator">
+      <div  class="leftcontent">
+        <div  class="cardrow">
+          <div  class="card">
+            <div class="titlecontainer">
+              <h1 class="title">Pulse DJs</h1>
+              <p class="number">45</p>
+              
+              <!-- <p *ngFor="let x of DjProfiles" class="number">{{x.outlets}}</p> -->
             </div>
           </div>
-        <div class="avatarcnt" *ngIf="page == 'commercial'">
-          <div  *ngFor="let x of houseDjs" class="avatar">
-              <img (click)="showinfo(x)"  src="{{x.img}}" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">{{x.fullname}}</p>
-                <p class="avatar__textcontainer--category">{{x.genre}}</p>
-              </div>
+          <div class="card">
+            <div class="titlecontainer">
+              <h1 class="title">Users</h1>
+              <p class="number">55</p>
+            </div>
           </div>
-        </div> 
-        <div class="avatarcnt" *ngIf="page == 'hipHop'">
-            <div *ngFor="let x of hipHopDjs" class="avatar">
+        </div>
+        <div class="djlist">
+          <div class="genlist">
+            <a class="genre" [class.active]="page == 'allDjs'" (click)="page = 'allDjs'; " >All</a>
+            <a class="genre" [class.active]="page == 'commercial'"  (click)="page = 'commercial'">Commercial</a>
+            <a class="genre">Deep House</a>
+            <a class="genre">EDM</a>
+            <a class="genre">R & B</a>
+            <a class="genre" [class.active]="page == 'hipHop'" (click)="page = 'hipHop'">Hip Hop</a>
+          </div>
+  
+          <div class="avatarcnt" *ngIf="page == 'allDjs'">
+              <div *ngFor="let x of DjProfiles" class="avatar">
+                  <img  (click)="showinfo(x)" src="{{x.img}}" alt="" class="avatar__image">
+                  <div class="avatar__textcontainer">
+                    <p class="avatar__textcontainer--name">{{x.fullname}}</p>
+                    <p class="avatar__textcontainer--category">{{x.genre}}</p>
+                  </div>
+              </div>
+            </div>
+          <div class="avatarcnt" *ngIf="page == 'commercial'">
+            <div  *ngFor="let x of houseDjs" class="avatar">
                 <img (click)="showinfo(x)"  src="{{x.img}}" alt="" class="avatar__image">
                 <div class="avatar__textcontainer">
                   <p class="avatar__textcontainer--name">{{x.fullname}}</p>
                   <p class="avatar__textcontainer--category">{{x.genre}}</p>
                 </div>
             </div>
-          </div>
-
-          <!-- <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
+          </div> 
+          <div class="avatarcnt" *ngIf="page == 'hipHop'">
+              <div *ngFor="let x of hipHopDjs" class="avatar">
+                  <img (click)="showinfo(x)"  src="{{x.img}}" alt="" class="avatar__image">
+                  <div class="avatar__textcontainer">
+                    <p class="avatar__textcontainer--name">{{x.fullname}}</p>
+                    <p class="avatar__textcontainer--category">{{x.genre}}</p>
+                  </div>
               </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div> -->
-          <!-- <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div>
-          <div class="avatar">
-              <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
-              <div class="avatar__textcontainer">
-                <p class="avatar__textcontainer--name">Dj Breeze</p>
-                <p class="avatar__textcontainer--category">Deep House</p>
-              </div>
-          </div> -->
-        
+            </div>
+  
+            <!-- <div class="avatar">
+                <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">Dj Breeze</p>
+                  <p class="avatar__textcontainer--category">Deep House</p>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">Dj Breeze</p>
+                  <p class="avatar__textcontainer--category">Deep House</p>
+                </div>
+            </div> -->
+            <!-- <div class="avatar">
+                <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">Dj Breeze</p>
+                  <p class="avatar__textcontainer--category">Deep House</p>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">Dj Breeze</p>
+                  <p class="avatar__textcontainer--category">Deep House</p>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">Dj Breeze</p>
+                  <p class="avatar__textcontainer--category">Deep House</p>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">Dj Breeze</p>
+                  <p class="avatar__textcontainer--category">Deep House</p>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">Dj Breeze</p>
+                  <p class="avatar__textcontainer--category">Deep House</p>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="../../assets/marshmello_1200x630.jpg" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">Dj Breeze</p>
+                  <p class="avatar__textcontainer--category">Deep House</p>
+                </div>
+            </div> -->
+          
+        </div>
+  
       </div>
-
+      <div class="rightcontent">
+        <img [src]="img" alt="" class="displaypic">
+        <p class="stagename">{{stagename}}</p>
+        <p class="fullname">{{fullname}}</p>
+        <p class="city">{{city}}</p>
+      <button (click)="navigate('profile')" class="more">View Profile</button>
+        <p class="bio">
+         {{bio}}
+        </p>
+  
+        <p class="head">Views</p>
+        <p class="number">23</p>
+        <p class="head">Interactions</p>
+        <p class="number">23</p>
+        <p class="head">Comments</p>
+        <p class="number">23</p>
+  
+      </div>
     </div>
-    <div class="rightcontent">
-      <img [src]="img" alt="" class="displaypic">
-      <p class="stagename">{{stagename}}</p>
-      <p class="fullname">{{fullname}}</p>
-      <p class="city">{{city}}</p>
-    <button (click)="navigate('profile')" class="more">View Profile</button>
-      <p class="bio">
-       {{bio}}
-      </p>
-
-      <p class="head">Views</p>
-      <p class="number">23</p>
-      <p class="head">Interactions</p>
-      <p class="number">23</p>
-      <p class="head">Comments</p>
-      <p class="number">23</p>
-
+  
+  </div>
+  
+  <!-- <div class="bodd">
+    <h1>House Dj's</h1>
+    <div>
+      <div class="info" *ngFor="let x of houseDjs"    (click)="showinfo(x)">
+          bio: {{x.bio}}
+          <br>
+          <br> email: {{x.email}}
+          <br>
+          <br> city: {{x.city}}
+          <br>
+          <br> fullname: {{x.fullname}}
+          <br>
+          <br> gender: {{x.gender}}
+          <br>
+          <br> payment: {{x.payment}}
+          <br>
+          <br> price: {{x.price}}
+          <br>
+          <br> stagename : {{x.stagename}}
+        </div>
     </div>
+  
   </div>
-
-</div>
-
-<!-- <div class="bodd">
-  <h1>House Dj's</h1>
   <div>
-    <div class="info" *ngFor="let x of houseDjs"    (click)="showinfo(x)">
-        bio: {{x.bio}}
-        <br>
-        <br> email: {{x.email}}
-        <br>
-        <br> city: {{x.city}}
-        <br>
-        <br> fullname: {{x.fullname}}
-        <br>
-        <br> gender: {{x.gender}}
-        <br>
-        <br> payment: {{x.payment}}
-        <br>
-        <br> price: {{x.price}}
-        <br>
-        <br> stagename : {{x.stagename}}
-      </div>
-  </div>
-
+    <h1>Hip-Hop Dj's</h1>
+    <div>
+      <div class="info" *ngFor="let x of hipHopDjs"   (click)="showinfo(x)">
+          bio: {{x.bio}}
+          <br>
+          <br> email: {{x.email}}
+          <br>
+          <br> city: {{x.city}}
+          <br>
+          <br> fullname: {{x.fullname}}
+          <br>
+          <br> gender: {{x.gender}}
+          <br>
+          <br> payment: {{x.payment}}
+          <br>
+          <br> price: {{x.price}}
+          <br>
+          <br> stagename : {{x.stagename}}
+        </div>
+    </div>
+  
+  </div> -->
 </div>
-<div>
-  <h1>Hip-Hop Dj's</h1>
-  <div>
-    <div class="info" *ngFor="let x of hipHopDjs"   (click)="showinfo(x)">
-        bio: {{x.bio}}
-        <br>
-        <br> email: {{x.email}}
-        <br>
-        <br> city: {{x.city}}
-        <br>
-        <br> fullname: {{x.fullname}}
-        <br>
-        <br> gender: {{x.gender}}
-        <br>
-        <br> payment: {{x.payment}}
-        <br>
-        <br> price: {{x.price}}
-        <br>
-        <br> stagename : {{x.stagename}}
-      </div>
-  </div>
-
-</div> -->

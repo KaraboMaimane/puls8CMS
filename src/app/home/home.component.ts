@@ -11,20 +11,23 @@ export class HomeComponent implements OnInit {
   DjProfiles = new Array();
   houseDjs = new Array();
   hipHopDjs = new Array();
-  bio;
-  city;
-  fullname
+  bio: any = 'Select A Genre And A Dj Profile To View Their Information';
+  city: any;
+  fullname: any = 'No Profile Selected';
   email;
   gender;
   payment;
   price;
   role;
-  stagename;
+  stagename: any;
   totalDjs;
-  img;
+  img: string = 'http://www.dealnetcapital.com/files/2014/10/blank-profile.png';
   modal;
+  
+  page: string= 'home';
 
-  page: string = 'home'
+  lactive: string = 'bio';
+
 
   constructor(public database: DatabaseService, private router: Router) {
    
