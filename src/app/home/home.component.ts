@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
   person;
   key
   ProfileArr= ProfileArr;
+  cardselection: string = 'dj';
   constructor(public database: DatabaseService, private router: Router) {
     this.database.retreiveDJs().then((data: any) => {
       this.DjProfiles = data;

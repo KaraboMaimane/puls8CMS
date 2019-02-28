@@ -77,6 +77,21 @@ $color-grey-dark-3: #999;
 //     }
 // }
 
+.cardactive{
+    border: 3px solid $color-primary-dark;
+    box-shadow: 0 0px 100px  rgba($color-primary-light, .5) inset;
+
+    .titlecontainer{
+        h1{
+            color: white;
+        }
+
+        p{
+            color: $color-primary-light;
+        }
+    }
+}
+
 .content{
     height: 94vh;
     width: 100%;
@@ -95,11 +110,12 @@ $color-grey-dark-3: #999;
             flex: 0 0 20vh;
             width: 100%;
             background: lightblue;
+            margin-bottom: .5rem;
             .card{
                 display: flex;
                 height: 20vh;
                 color: white;
-
+                transition: .3s;
                 align-items: center;
                 justify-content: center;
 
@@ -113,7 +129,6 @@ $color-grey-dark-3: #999;
                     background: linear-gradient(rgba(black, .5), rgba(black, .5)) , url('../../assets/decks.jpg');
                     background-size: cover;
                     background-position: center;
-
                 }
                 &:nth-child(2){
                     flex: 0 0 50%;
@@ -159,6 +174,9 @@ $color-grey-dark-3: #999;
                     .active{
                         background: $color-primary-dark;
                         border-radius: 10rem;
+                        &:hover{
+                            color: white !important;
+                        }
                     }
                 }
             }
@@ -269,6 +287,11 @@ $color-grey-dark-3: #999;
             font-size: 2.5rem;
             border: none;
             margin-top: 2rem;
+            animation: showup .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: ease .3s;
+            &:hover{
+                background: linear-gradient($color-primary-dark, $color-primary-light);
+            }
         }
 
         .displaypic{
@@ -279,39 +302,49 @@ $color-grey-dark-3: #999;
             display: block;
             border: 2px solid white;
             margin-top: 2rem;
+            animation: fadein .3s ease;            
         }
 
         .stagename{
             font-size: 4rem;
             margin-top: 2rem;
-
+            animation: fadein .3s ease;
+            
         }
 
         .fullname{
             font-size: 2rem;
             margin-top: 1rem;
-
+            animation: fadein .3s ease;
+            
         }
 
         .city{
             font-size: 1.6rem;
             margin-top: 1rem;
-
+            animation: fadein .3s ease;
+            
         }
 
         .bio{
             font-size: 1.6rem;
             margin-top: 1rem;
             margin-bottom: 1rem;
+            animation: fadein .3s ease;
+            
         }
 
         .head{
             font-size: 2.5rem;
             margin-top: 1;
+            animation: fadein .3s ease;
+            
         }
 
         .number{
             font-size: 2rem;
+            animation: fadein .3s ease;
+            
         }
     }
 }

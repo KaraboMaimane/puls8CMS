@@ -311,6 +311,7 @@ body {
     position: absolute;
     top: 0;
     z-index: 1000;
+    animation: showup .3s .4s cubic-bezier(0,.59,1,.41);
     .loadingmod{
         background: rgba(white, 1);
         border-radius: 10rem;
