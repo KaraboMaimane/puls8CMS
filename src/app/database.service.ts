@@ -86,7 +86,7 @@ export class DatabaseService {
 						}
 					});
 					accpt(this.allDjSArray);
-					console.log(this.allDjSArray)
+					console.log(this.allDjSArray);
 				}
 			});
 		});

@@ -30,7 +30,7 @@
               "src/styles.scss",
               "./node_modules/sweetalert2/dist/sweetalert2.min.css"
             ],
-            "scripts": ["./node_modules/sweetalert2/dist/sweetalert2.min.js"]
+            "scripts": ["./node_modules/jquery/dist/jquery.min.js", "./node_modules/waypoints/lib/jquery.waypoints.min.js","./node_modules/counterup/jquery.counterup.min.js","./node_modules/sweetalert2/dist/sweetalert2.min.js"]
           },
           "configurations": {
             "production": {

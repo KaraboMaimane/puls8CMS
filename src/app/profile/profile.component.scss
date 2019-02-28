@@ -56,13 +56,41 @@ $color-grey-dark-3: #999;
     margin-left: 1rem;
     padding:1rem;
     transition: .5s;
+    width: 15rem;
+    text-align: center;
+    animation: bg 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    
     &:hover{
         cursor: pointer;
-        background: $color-primary-dark;
+        background: linear-gradient($color-primary-dark, $color-primary-light) ;
         border-radius: 10rem;
         // text-decoration: underline;
+        animation: none;
+        span:hover{
+        }
+
+        span{
+            transform: translateX(-2rem);
+            backface-visibility: hidden;
+            animation: none !important;         
+        }
+    }
+
+    span{
+        display: inline-block;
+        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) .4s all;
     }
 }
+
+@keyframes bg{
+
+    100%{
+        background: rgba($color-primary-dark, .8);
+        
+        border-radius: 10rem;
+    }
+}
+
 .profilecontainer{
     display: flex;
     color: white;
@@ -136,19 +164,22 @@ $color-grey-dark-3: #999;
                 border: none;
                 color: white;
                 margin-top: 2rem;
-                &:first-child{
-                    margin-right: 2rem;
-                    background: linear-gradient($color-primary-light, $color-primary-dark);
-                    padding: 1rem 2.5rem;
-                    font-size:2rem;
-                    border-radius: 10rem;
-                }
-                &:nth-child(2){
-                    background: linear-gradient( $color-danger, red) ;
-                    padding: 1rem 2.5rem;
-                    font-size:2rem;
-                    border-radius: 10rem;
-                }
+                animation: showup .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            .message{
+                margin-right: 2rem;
+                background: linear-gradient($color-primary-light, $color-primary-dark);
+                padding: 1rem 2.5rem;
+                font-size:2rem;
+                border-radius: 10rem;
+            }
+            .remove{
+                background: linear-gradient( $color-danger, red) ;
+                padding: 1rem 2.5rem;
+                font-size:2rem;
+                border-radius: 10rem;
+                animation-delay: .2s;
             }
         }
 
@@ -214,7 +245,7 @@ $color-grey-dark-3: #999;
         background: url('../../assets/marshmello_1200x630.jpg');
         background-size: cover;
         background-position: center;
-        box-shadow: 0 0px 100px  rgba($color-secondary-dark, .5) inset;
+        box-shadow: 0 0px 100px  rgba(black, .8) inset;
     }
 }
 

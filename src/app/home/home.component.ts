@@ -5,7 +5,11 @@ import { obj } from '../../app/class';
 import ProfileArr from '../../app/class';
 import profobj from '../../app/class';
 import { jitExpression } from '@angular/compiler';
+declare var $;
+declare var waypoints;
+declare var counterUp;
 
+// import counterUp from 'counterup';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -54,6 +58,11 @@ export class HomeComponent implements OnInit {
       this.countdj =  this.DjProfiles.length
       console.log(this.key)
       console.log(this.DjProfiles)
+    }).then(function(){
+      $('.counter').counterUp({
+        delay: 2,
+        time: 3000
+      });
     })
 
     this.database.retreiveUsers().then((data: any) => {
@@ -119,9 +128,6 @@ getdj(){
     this.page =  'allDjs';
   }
 
-
-
-  
   selectGenre() {
     this.getprofileArr2 = [];
     for(var  x = 0; x < this.DjProfiles.length; x++){

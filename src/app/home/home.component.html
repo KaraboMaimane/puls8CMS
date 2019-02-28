@@ -13,13 +13,13 @@
           <div  class="card" (click)="getdj(); fullname = ''; stagename = ''; cardselection = 'dj'; avatarindex = i" [class.cardactive]="cardselection == 'dj'">
             <div class="titlecontainer">
               <h1 class="title" >Pulse DJs</h1>
-              <p class="number">{{this.countdj}}</p>
+              <p class="number counter">{{this.countdj}}</p>
             </div>
           </div>
           <div class="card" (click)="getusers(); fullname = ''; stagename = ''; cardselection = 'users'; avatarindex = i" [class.cardactive]="cardselection == 'users'">
             <div class="titlecontainer">
               <h1 class="title" >Users</h1>
-              <p class="number">{{this.countuser}}</p>
+              <p class="number counter">{{this.countuser}}</p>
             </div>
           </div>
         </div>
@@ -130,6 +130,7 @@
   <div class="loadcontainer" *ngIf="countdj < 1 && countuser < 1">
     <div class="loadingmod">
       <img src="../../assets/sound-wavesdard.png" alt="" class="icon">
+      <!-- <p class="counter">2000</p> -->
       <p class="message">Loading Content 
         <span>.</span>
         <span>.</span>
