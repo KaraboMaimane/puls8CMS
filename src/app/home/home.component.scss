@@ -149,10 +149,11 @@ $color-grey-dark-3: #999;
                     font-size: 2rem;
                     margin: .5rem 0;
                     transition: all ease .3s;
+                    border-radius: 10rem !important;
+
                     &:hover{
                         color: $color-primary-dark;
                         // background: $color-primary-dark;
-                        border-radius: 10rem;
                     }
 
                     .active{

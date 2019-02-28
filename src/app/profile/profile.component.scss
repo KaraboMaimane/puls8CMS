@@ -32,6 +32,7 @@ $color-grey-dark-3: #999;
             letter-spacing: .3rem;
             font-weight: 200;
             margin: 0;
+            // margin-top: 3rem;
             .prefix{
                 position: relative;
                 height: 100%;
@@ -48,6 +49,19 @@ $color-grey-dark-3: #999;
     }
 }
 
+.back{
+    position: absolute;
+    font-size: 2.5rem;
+    margin-left: 1rem;
+    padding:1rem;
+    transition: .5s;
+    &:hover{
+        cursor: pointer;
+        background: $color-primary-dark;
+        border-radius: 10rem;
+        // text-decoration: underline;
+    }
+}
 .profilecontainer{
     display: flex;
     color: white;
@@ -162,6 +176,9 @@ $color-grey-dark-3: #999;
             .card{
                 display: flex;
                 align-items: center;
+                .bio{
+                    word-wrap: break-word;
+                }
                 img{
                     height: 7rem;
                     width: 7em;

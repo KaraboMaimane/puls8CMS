@@ -10,5 +10,5 @@ export interface obj{
 
     }
 
-    let ProfileArr = new Array();
+    var ProfileArr = new Array();
     export default ProfileArr;

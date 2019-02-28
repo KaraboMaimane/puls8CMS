@@ -11,12 +11,12 @@ import {FormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 
   var config = {
-  apiKey: "AIzaSyDHRAF0bth4sm4p4xTTBzjqc3RmdMNLcY4",
-  authDomain: "puls8-41496.firebaseapp.com",
-  databaseURL: "https://puls8-41496.firebaseio.com",
-  projectId: "puls8-41496",
-  storageBucket: "puls8-41496.appspot.com",
-  messagingSenderId: "110966517847"
+    apiKey: "AIzaSyCI9c63kFGLwA6obewlXKUgaYuJa-dIyp8",
+    authDomain: "newpuls8database.firebaseapp.com",
+    databaseURL: "https://newpuls8database.firebaseio.com",
+    projectId: "newpuls8database",
+    storageBucket: "newpuls8database.appspot.com",
+    messagingSenderId: "649926660397"
 };
 firebase.initializeApp(config)
 

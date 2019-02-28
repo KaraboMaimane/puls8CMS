@@ -12,14 +12,14 @@
         <div  class="cardrow">
           <div  class="card">
             <div class="titlecontainer">
-              <h1 class="title">Pulse DJs</h1>
-              <p class="number">45</p>
+              <h1 class="title" (click)="getdj()">Pulse DJs</h1>
+              <p class="number">{{this.countdj}}</p>
             </div>
           </div>
           <div class="card">
             <div class="titlecontainer">
-              <h1 class="title">Users</h1>
-              <p class="number">55</p>
+              <h1 class="title" (click)="getusers()">Users</h1>
+              <p class="number">{{this.countuser}}</p>
             </div>
           </div>
         </div>
@@ -28,14 +28,14 @@
             <a class="genre" [class.acti]="page == 'allDjs'" (click)="page = 'allDjs'; " >All</a>
             <a class="genre" [class.acti]="page == 'commercial'"  (click)="page = 'commercial'">Commercial</a>
             <a class="genre" [class.acti]="page == 'deephouse'" (click)="page = 'deephouse';">Deep House</a>
-            <a class="genre" [class.acti]="page == 'edm'" (click)="page = 'edm';">EDM</a>
-            <a class="genre" [class.acti]="page == 'rnb'" (click)="page = 'rnb';">R & B</a>
+            <!-- <a class="genre" [class.acti]="page == 'edm'" (click)="page = 'edm';">EDM</a> -->
+            <a class="genre" [class.acti]="page == 'kwaito'" (click)="page = 'kwaito';">Kwaito</a>
             <a class="genre" [class.acti]="page == 'hiphop'" (click)="page = 'hiphop'">Hip Hop</a>
-            <select class="genderselect" name="gender">
+            <!-- <select class="genderselect" name="gender">
               <option class="option" value="" selected disabled>Gender</option>
               <option class="option" value="male">Male</option>
               <option class="option" value="female">Female</option>
-            </select>
+            </select> -->
             <!-- <div class="gendercontainer">
                 <button class="gender">Gender</button>
                 <div class="gendericons">
@@ -51,26 +51,45 @@
           </div>
   
           <div class="avatarcnt" *ngIf="page == 'allDjs'">
-              <div *ngFor="let x of DjProfiles" class="avatar">
-                  <img  (click)="DisplayInfor(x)" src="{{x.img}}" alt="" class="avatar__image">
+              <div (click)="DisplayInfor(x)" *ngFor="let x of DjProfiles" class="avatar">
+                  <img   src="{{x.img}}" alt="" class="avatar__image">
                   <div class="avatar__textcontainer">
-                    <p class="avatar__textcontainer--name">{{x.fullname}}</p>
-                    <p class="avatar__textcontainer--category">{{x.genre}}</p>
+                    <p class="avatar__textcontainer--name">{{x.fullname | slice:0:10}}</p>
+                    <p class="avatar__textcontainer--category">{{x.genre | slice:0:10}}</p>
                   </div>
               </div>
             </div>
           <div class="avatarcnt" *ngIf="page == 'commercial'">
-            <div  *ngFor="let x of houseDjs" class="avatar">
-                <img (click)="DisplayInfor(x)"  src="{{x.img}}" alt="" class="avatar__image">
+            <div (click)="DisplayInfor(x)"  *ngFor="let x of houseDjs" class="avatar">
+                <img   src="{{x.img}}" alt="" class="avatar__image">
                 <div class="avatar__textcontainer">
                   <p class="avatar__textcontainer--name">{{x.fullname}}</p>
                   <p class="avatar__textcontainer--category">{{x.genre}}</p>
                 </div>
             </div>
           </div> 
-          <div class="avatarcnt" *ngIf="page == 'hipHop'">
-              <div *ngFor="let x of hipHopDjs" class="avatar">
-                  <img (click)="DisplayInfor(x)"  src="{{x.img}}" alt="" class="avatar__image">
+          <div class="avatarcnt" *ngIf="page == 'deephouse'">
+            <div (click)="DisplayInfor(x)"  *ngFor="let x of DeepHouseDjs" class="avatar">
+                <img   src="{{x.img}}" alt="" class="avatar__image">
+                <div class="avatar__textcontainer">
+                  <p class="avatar__textcontainer--name">{{x.fullname}}</p>
+                  <p class="avatar__textcontainer--category">{{x.genre}}</p>
+                </div>
+            </div>
+          </div> 
+          
+          <div class="avatarcnt" *ngIf="page == 'hiphop'">
+              <div (click)="DisplayInfor(x)" *ngFor="let x of hipHopDjs" class="avatar">
+                  <img   src="{{x.img}}" alt="" class="avatar__image">
+                  <div class="avatar__textcontainer">
+                    <p class="avatar__textcontainer--name">{{x.fullname}}</p>
+                    <p class="avatar__textcontainer--category">{{x.genre}}</p>
+                  </div>
+              </div>
+            </div>
+            <div class="avatarcnt" *ngIf="page == 'kwaito'">
+              <div (click)="DisplayInfor(x)" *ngFor="let x of kwaitoDjs" class="avatar">
+                  <img   src="{{x.img}}" alt="" class="avatar__image">
                   <div class="avatar__textcontainer">
                     <p class="avatar__textcontainer--name">{{x.fullname}}</p>
                     <p class="avatar__textcontainer--category">{{x.genre}}</p>
@@ -85,12 +104,12 @@
         <img [src]="img" alt="" class="displaypic">
         <p class="stagename" *ngIf="stagename == ''">No Profile Selected</p>
         
-        <p class="stagename" *ngIf="stagename != ''">{{stagename}}</p>
-        <p class="fullname" *ngIf="fullname != ''">{{fullname}}</p>
+        <p class="stagename" *ngIf="stagename != ''">{{stagename | slice:0:10}}</p>
+        <p class="fullname" *ngIf="fullname != ''">{{fullname | slice:0:20}}</p>
         <p class="city" *ngIf="city != ''">{{city}}</p>
 
         <p class="bio">
-         {{bio}}
+         {{bio | slice:0:20}}
         </p>
 
         <!-- <p class="head">Views</p>

@@ -9,9 +9,9 @@
       <p *ngIf="!name.valid && name.touched" class="err">Username Cannot Be Empty!</p>
       <input name="email" ngModel #email="ngModel" required type="email" class="input" placeholder="Email">
       <p *ngIf="!email.valid && email.touched" class="err">Email Cannot Be Empty!</p>
-      <input name="password" ngModel #password="ngModel" minlength="6" required type="password" class="input" placeholder="Password">
-      <p *ngIf="!password.valid && password.touched" class="err">Password Cannot Be Empty & less than 6 characters!</p>
-      <p *ngIf="password.touched && password.length < minlength" class="err">Password Must Be At Least 6 Characters Long!</p>
+      <input name="password" ngModel #password="ngModel" required type="password" class="input" placeholder="Password">
+      <p *ngIf="!password.valid && password.touched" class="err">Password Cannot Be Empty!</p>
+      <!-- <p *ngIf="password.touched && password.length < minlength" class="err">Password Must Be At Least 6 Characters Long!</p> -->
       <input type="submit" value="Sign In" class="button">
 
       <a class="link" (click)="nextpage('login')">Already Have An Account?</a>

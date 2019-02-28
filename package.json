@@ -23,7 +23,10 @@
     "@ionic-native/firebase": "^5.0.0",
     "core-js": "^2.5.4",
     "firebase": "^5.8.2",
+    "moment": "^2.24.0",
+    "ng": "0.0.0",
     "rxjs": "~6.3.3",
+    "s": "^0.1.1",
     "sweetalert2": "^8.0.7",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
