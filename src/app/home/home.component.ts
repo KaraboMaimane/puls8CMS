@@ -60,8 +60,7 @@ export class HomeComponent implements OnInit {
       console.log(this.DjProfiles)
     }).then(function(){
       $('.counter').counterUp({
-        delay: 2,
-        time: 3000
+        time: 2500
       });
     })
 

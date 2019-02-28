@@ -16,6 +16,7 @@ export class ProfileComponent implements OnInit {
   key;
   event: Observable<string | null>
   object: any;
+  delwarn: string = 'false';
   constructor(private route: ActivatedRoute, private router: Router,public getdata:DatabaseService) { 
     this.getdata.retrieveMusic(this.key).then((data)=>{
      console.log(data)
@@ -32,6 +33,7 @@ export class ProfileComponent implements OnInit {
     this.key = ProfileArr[0].key
     console.log(this.key)
     console.log(this.object);
+    this.delwarn = 'false';    
   }
 
   navigate(page: string){

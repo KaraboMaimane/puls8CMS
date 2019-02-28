@@ -14,7 +14,7 @@
 
     <div class="buttonlist">
       <button class="message">Message User</button>
-      <button class="remove">Remove User</button>
+      <button class="remove" (click)="delwarn = 'true'">Remove User</button>
     </div>
     <div class="seglist">
       <li class="item" [class.lactive]="seg == 'music'" (click)="seg = 'music'; ">Music</li>
@@ -50,7 +50,17 @@
   }"
   ></div>
 
-
+  <div class="warncontainer" *ngIf="delwarn == 'true'">
+      <div class="alertbox" (click)="delwarn = 'false'">
+        <img src="../../assets/thinking.svg" alt="" class="alertimg">
+        <div class="messagebox">
+          <p class="alertmessagehead">Whoa, Hey There...</p>
+          <p class="alertmessage">Do You Really Want To Remove: "{{object.fullname}}"?</p>
+          <button class="alertbutton" (click)="delwarn = 'false'">Nah</button>
+          <button class="alertbutton" (click)="delwarn = 'false'">Okay</button>
+        </div>
+      </div>
+    </div> 
 </div>
 
 
