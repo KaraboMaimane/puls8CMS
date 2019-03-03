@@ -13,6 +13,11 @@ $color-grey-dark-1: #333;
 $color-grey-dark-2: #777;
 $color-grey-dark-3: #999;
 
+$chat-bubble:(
+  background-left: #fea21c,
+  background-right: #8abefa,
+);
+
 .nav{
     color: white;
     display: flex;

@@ -33,11 +33,25 @@
     </div>
 
     <div class="cardlist" *ngIf="seg == 'comments'">
-      <div class="commentcard"  *ngFor="let p of CommentArr">
+      
+      <div class="chatBubble" *ngFor="let p of CommentArr; let i = index; let odd = 'left'; let even = 'right'">
+        <!-- <img class="profile-pic even" src="{{n.pic}}"> -->
+        <div class="chat-bubble left">
+            <div class="message">{{p.comment}}</div>
+            <div class="message-detail">
+                <span style="font-weight:bold;">{{p.name}} </span>,
+                <span>{{p.date}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">&nbsp;</div>
+      
+      <!-- <div class="commentcard"  *ngFor="let p of CommentArr">
         <p>{{p.name}}</p>
         <p>{{p.comment}}</p>
         <p>{{p.date}}</p>
-      </div>
+      </div> -->
     </div>
 
     <div class="cardlist" *ngIf="seg == 'profile'">
