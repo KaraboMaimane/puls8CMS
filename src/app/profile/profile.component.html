@@ -13,6 +13,7 @@
     <p class="city">{{object.city}}</p>
 
     <div class="buttonlist">
+      <!-- for future use here ▼ ▼-->
       <!-- <button class="message">Message User</button> -->
       <button class="remove" (click)="remove()">Remove User</button>
     </div>
@@ -27,15 +28,17 @@
         <img [src]="object.img" alt="" class="art">
         <div class="text">
           <p class="artist">{{b.MusicName}}</p>
+          <!-- fix track names eg Breeze - Umoja. not the full link details ▼ ▼ -->
           <p class="track">{{b.name}}</p>
         </div>
       </div>
     </div>
 
-    <div class="cardlist" *ngIf="seg == 'comments'">
+    <div class="cardlist comments" *ngIf="seg == 'comments'">
       
       <div class="chatBubble" *ngFor="let p of CommentArr; let i = index; let odd = 'left'; let even = 'right'">
-        <!-- <img class="profile-pic even" src="{{n.pic}}"> -->
+        <!-- please bind the photo below of the person commenting. I just figured out and did it today▼ ▼ -->
+        <img class="profile-pic even" src="../../assets/sound-wavesgrey.png">
         <div class="chat-bubble left">
             <div class="message">{{p.comment}}</div>
             <div class="message-detail">
@@ -44,6 +47,168 @@
             </div>
         </div>
     </div>
+
+    <!-- <div class="chatBubble">
+      <img class="profile-pic even" src="../../assets/happy.svg">
+      <div class="chat-bubble left">
+          <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+          <div class="message-detail">
+              <span style="font-weight:bold;">Mjojos Gamede </span>,
+              <span>{{p.date}}</span>
+          </div>
+      </div>
+  </div>
+
+  <div class="chatBubble">
+    <img class="profile-pic even" src="../../assets/happy.svg">
+    <div class="chat-bubble left">
+        <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+        <div class="message-detail">
+            <span style="font-weight:bold;">Mjojos Gamede </span>,
+            <span>{{p.date}}</span>
+        </div>
+    </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div>
+<div class="chatBubble">
+  <img class="profile-pic even" src="../../assets/happy.svg">
+  <div class="chat-bubble left">
+      <div class="message">Inja ye game he knows how to handle the crowd even in the craziest of places. I like him</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">Mjojos Gamede </span>,
+          <span>{{p.date}}</span>
+      </div>
+  </div>
+</div> -->
 
     <div class="block">&nbsp;</div>
       
