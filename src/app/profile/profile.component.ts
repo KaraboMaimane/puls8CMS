@@ -11,16 +11,15 @@ import { DatabaseService } from '../database.service';
 })
 export class ProfileComponent implements OnInit {
   seg: string = 'profile';
-  Profile =[];
+  Profile = [];
+  musicArr= new Array();
+  CommentArr= new Array();
   temp = [];
   key;
   event: Observable<string | null>
   object: any;
-  delwarn: string = 'false';
-  constructor(private route: ActivatedRoute, private router: Router,public getdata:DatabaseService) { 
-    this.getdata.retrieveMusic(this.key).then((data)=>{
-     console.log(data)
-    })
+  constructor(private route: ActivatedRoute, private router: Router, public getdata: DatabaseService) {
+
     // this.getdata.getComments().then((data)=>{
     //  console.log(data)
     // })
@@ -33,11 +32,29 @@ export class ProfileComponent implements OnInit {
     this.key = ProfileArr[0].key
     console.log(this.key)
     console.log(this.object);
-    this.delwarn = 'false';    
+
+
+    this.getdata.retrieveMusic(this.key).then((data:any) => {
+      this.musicArr=data
+      console.log(this.musicArr)
+    })
+
+    this.getdata.getComments(this.key).then((data:any)=>{
+      this.CommentArr=data
+      console.log(this.CommentArr)
+    })
+
+  
   }
 
-  navigate(page: string){
+  navigate(page: string) {
     this.router.navigate([`/${page}`]);
   }
+
+  remove(){
+    this.getdata.removeUser(this.key).then((data:any)=>{
+      console.log(data)
+      this.router.navigate(['/profile']);
+    })
+  }
 }
- 

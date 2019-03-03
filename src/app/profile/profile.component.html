@@ -13,8 +13,8 @@
     <p class="city">{{object.city}}</p>
 
     <div class="buttonlist">
-      <button class="message">Message User</button>
-      <button class="remove" (click)="delwarn = 'true'">Remove User</button>
+      <!-- <button class="message">Message User</button> -->
+      <button class="remove" (click)="remove()">Remove User</button>
     </div>
     <div class="seglist">
       <li class="item" [class.lactive]="seg == 'music'" (click)="seg = 'music'; ">Music</li>
@@ -23,18 +23,20 @@
     </div>
 
     <div class="cardlist" *ngIf="seg == 'music'">
-      <div class="card">
+      <div class="card"  *ngFor="let b of musicArr"> 
         <img [src]="object.img" alt="" class="art">
         <div class="text">
-          <p class="artist">Dj Ntonton feat. Mojojos Gamede</p>
-          <p class="track">Khon' O Zo Lahla</p>
+          <p class="artist">{{b.MusicName}}</p>
+          <p class="track">{{b.name}}</p>
         </div>
       </div>
     </div>
 
     <div class="cardlist" *ngIf="seg == 'comments'">
-      <div class="commentcard">
-        <img src="" alt="" class="sender">
+      <div class="commentcard"  *ngFor="let p of CommentArr">
+        <p>{{p.name}}</p>
+        <p>{{p.comment}}</p>
+        <p>{{p.date}}</p>
       </div>
     </div>
 
