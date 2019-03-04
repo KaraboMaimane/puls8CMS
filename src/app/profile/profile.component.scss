@@ -13,6 +13,11 @@ $color-grey-dark-1: #333;
 $color-grey-dark-2: #777;
 $color-grey-dark-3: #999;
 
+$chat-bubble:(
+  background-left: #fea21c,
+  background-right: #8abefa,
+);
+
 .nav{
     color: white;
     display: flex;
@@ -55,17 +60,18 @@ $color-grey-dark-3: #999;
     font-size: 2.5rem;
     margin-left: 1rem;
     padding:1rem;
-    transition: .5s;
+    transition: .3s;
     width: 15rem;
     text-align: center;
     animation: bg 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-    
+    margin-top: 1rem;
     &:hover{
         cursor: pointer;
         background: linear-gradient($color-primary-dark, $color-primary-light) ;
         border-radius: 10rem;
         // text-decoration: underline;
         animation: none;
+        padding: 1rem 1.5rem;
         span:hover{
         }
 
@@ -78,7 +84,7 @@ $color-grey-dark-3: #999;
 
     span{
         display: inline-block;
-        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) .4s all;
+        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) .2s all;
     }
 }
 
@@ -165,6 +171,19 @@ $color-grey-dark-3: #999;
                 color: white;
                 margin-top: 2rem;
                 animation: showup .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
+                &:focus{
+                    outline: none;
+                }
+
+                &:hover{
+                    transform: translateY(-1rem);
+                    box-shadow: 0 1rem 3rem rgba($color-primary-dark, .6);
+                }
+
+                &:active{
+                    box-shadow: 0 .5rem 1.5rem rgba($color-primary-dark, .6);
+                }
             }
 
             .message{
@@ -189,7 +208,8 @@ $color-grey-dark-3: #999;
             flex: 1 0 0;
             overflow-y: scroll;
             overflow-x: hidden;
-
+            animation: showup .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backface-visibility: hidden;
             &::-webkit-scrollbar{
                 width: 1rem;
             }
@@ -229,7 +249,7 @@ $color-grey-dark-3: #999;
                     }
                     .track{
                         font-size: 1.6rem;
-                        text-align: left;
+                        text-align: left; 
                         margin-bottom: 1rem;
                     }
                 }
@@ -261,3 +281,91 @@ $color-grey-dark-3: #999;
     border-bottom: .2rem solid $color-primary-light !important;
     color:  $color-primary-light;
 }
+
+.comments{
+    display: flex !important;
+    flex-flow: column nowrap !important;
+}
+
+.chatBubble{
+    animation: fadein .3s ease;
+    position: relative;
+    margin-bottom: 6rem;
+      img.profile-pic {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -4rem;
+        left: 4rem;
+      }
+    
+    //   img.profile-pic.left {
+    //     left: 10px;
+    //   }
+    
+    //   img.profile-pic.right {
+    //     right: 10px;
+    //   }
+    
+      .message {
+        font-size: medium;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        margin-left: .5rem;
+      }
+    
+      .message-detail {
+        white-space: nowrap;
+        font-size: 1.4rem;
+      }
+    
+      .chat-bubble {
+        border-radius: 5px;
+        display: inline-block;
+        padding: 1rem 1.8rem;
+        position: relative;
+        margin: 1rem;
+        max-width: 80%;
+      }
+    
+      .chat-bubble:before {
+        content: "\00a0";
+        display: block;
+        height: 1.6rem;
+        width: .9rem;
+        position: absolute;
+        bottom: -.7.5rem;
+      }
+    
+      .chat-bubble.left {
+        background-color: map-get($chat-bubble, background-left);
+        float: left;
+        margin-left: 4.5rem;
+        color: white !important;
+      }
+    
+      .chat-bubble.left:before {
+        background-color: map-get($chat-bubble, background-left);
+        left: 1rem;
+        -webkit-transform: rotate(70deg) skew(5deg);
+      }
+    
+      .chat-bubble.right { 
+        background-color: map-get($chat-bubble, background-right);
+        color: #000;
+        float: right;
+        margin-right: 4.5rem;
+      }
+    
+      .chat-bubble.right:before {
+        background-color: map-get($chat-bubble, background-right);
+        right: 1rem;
+        -webkit-transform: rotate(118deg) skew(-5deg);
+      }
+     
+      .chat-bubble.right a.autolinker {
+        color: #000;
+        font-weight: bold;
+      }
+    }

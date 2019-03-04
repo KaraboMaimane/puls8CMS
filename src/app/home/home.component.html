@@ -110,7 +110,7 @@
         <p class="city" *ngIf="city != ''">{{city}}</p>
 
         <p class="bio" *ngIf="fullname != '' && stagename != ''">
-         {{bio | slice:0:20}}
+         {{bio | slice:0:100}}...
         </p>
 
         <!-- <p class="head">Views</p>
