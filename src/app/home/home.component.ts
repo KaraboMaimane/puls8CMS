@@ -158,15 +158,6 @@ getdj(){
   }
 
 
-
-
-  // AllSection() {
-  //   this.database.retreiveDJs().then((data: any) => {
-  //     this.DjProfiles = data;
-  //     console.log(this.DjProfiles)
-  //   }) 
-  // }
-
   HouseSection() {
     this.database.houseDjs().then((data: any) => {
       this.houseDjs = data;
