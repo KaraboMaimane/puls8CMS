@@ -50,6 +50,7 @@ export class HomeComponent implements OnInit {
   key
   ProfileArr= ProfileArr;
   cardselection: string = 'dj';
+  delwarn: any;
   constructor(public database: DatabaseService, private router: Router) {
     this.database.retreiveDJs().then((data: any) => {
       this.DjProfiles = data;
@@ -65,10 +66,10 @@ export class HomeComponent implements OnInit {
     })
 
     this.database.retreiveUsers().then((data: any) => {
-      this.userProfile = data;
-      this.countuser=  this.userProfile.length
+      this.DjProfiles = data;
+      this.countuser=  this.DjProfiles.length
       console.log(this.countuser)
-      console.log(this.userProfile)
+      console.log(this.DjProfiles)
     })
 
 
@@ -184,6 +185,7 @@ getdj(){
     this.stagename = x.stagename
     this.img = x.img
     this.key = x.key
+    this.role=x.role
   }
 
   ViewProfile() {
@@ -198,7 +200,8 @@ getdj(){
         price: this.price,
         stagename: this.stagename,
         img: this.img,
-        key:this.key
+        key:this.key,
+        role:this.role
       }
       ProfileArr[0]=(obj);
       

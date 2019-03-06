@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/puls8cmss",
+    "public": "dist/puls8cms",
     "ignore": [
       "firebase.json",
       "**/.*",

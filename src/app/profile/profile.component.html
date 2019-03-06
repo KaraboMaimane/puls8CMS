@@ -18,8 +18,8 @@
       <button class="remove" (click)="remove()">Remove User</button>
     </div>
     <div class="seglist">
-      <li class="item" [class.lactive]="seg == 'music'" (click)="seg = 'music'; ">Music</li>
-      <li class="item" [class.lactive]="seg == 'comments'" (click)="seg = 'comments'; ">Comments</li>
+      <li class="item" [class.lactive]="seg == 'music'" (click)="seg = 'music'; " *ngIf="role == 'Dj'">Music</li>
+      <li class="item" [class.lactive]="seg == 'comments'" (click)="seg = 'comments'; " *ngIf="role == 'Dj'">Comments</li>
       <li class="item" [class.lactive]="seg == 'profile'" (click)="seg = 'profile'; ">Profile</li>
     </div>
 

@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   key;
   event: Observable<string | null>
   object: any;
+  role;
   constructor(private route: ActivatedRoute, private router: Router, public getdata: DatabaseService) {
 
     // this.getdata.getComments().then((data)=>{
@@ -30,9 +31,9 @@ export class ProfileComponent implements OnInit {
     this.Profile = ProfileArr;
     this.object = ProfileArr[0];
     this.key = ProfileArr[0].key
-    console.log(this.key)
+    this.role = ProfileArr[0].role
+    console.log(this.role)
     console.log(this.object);
-
 
     this.getdata.retrieveMusic(this.key).then((data:any) => {
       this.musicArr=data
